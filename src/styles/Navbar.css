@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(10, 30, 60, 0.95); /* deeper blue background */
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 20px 0;
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(100, 180, 255, 0.15); /* lighter blue border */
 }
 
 .nav-content {
@@ -19,7 +19,7 @@
 .logo {
   font-size: 24px;
   font-weight: bold;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #2196f3, #00bcd4); /* blue gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -30,7 +30,7 @@
 }
 
 .nav-link {
-  color: #ffffff;
+  color: #e3f2fd; /* light blue text */
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 20px;
@@ -38,6 +38,6 @@
 }
 
 .nav-link:hover {
-  background: rgba(102, 126, 234, 0.2);
-  color: #667eea;
+  background: rgba(33, 150, 243, 0.18); /* blue hover background */
+  color: #2196f3; /* blue hover text */
 }

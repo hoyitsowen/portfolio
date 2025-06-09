@@ -43,7 +43,7 @@
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #667eea;
+  color: #2196f3; /* changed from purple to blue */
 }
 
 .project-description {
@@ -60,8 +60,8 @@
 }
 
 .tech-tag {
-  background: rgba(102, 126, 234, 0.2);
-  color: #667eea;
+  background: rgba(33, 150, 243, 0.18); /* changed from purple to blue */
+  color: #2196f3; /* changed from purple to blue */
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.9rem;
@@ -73,15 +73,15 @@
 }
 
 .project-link {
-  color: #667eea;
+  color: #2196f3; /* changed from purple to blue */
   text-decoration: none;
   padding: 8px 16px;
-  border: 1px solid #667eea;
+  border: 1px solid #2196f3; /* changed from purple to blue */
   border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .project-link:hover {
-  background: #667eea;
+  background: #2196f3; /* changed from purple to blue */
   color: white;
 }
