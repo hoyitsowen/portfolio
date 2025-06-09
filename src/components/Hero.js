@@ -12,8 +12,8 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text animate-fade-in">
-            <h1>John Developer</h1>
-            <h2>Full Stack Developer & UI/UX Designer</h2>
+            <h1>Owen Trinidad</h1>
+            <h2>Front-end Developer & UI/UX Designer</h2>
             <p>
               Passionate about creating beautiful, functional, and user-centered digital experiences. I combine technical expertise with creative design to build amazing web applications.
             </p>
