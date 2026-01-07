@@ -1,0 +1,136 @@
+.pill-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--base-color);
+  background: transparent;
+}
+
+
+/* Center horizontally within the parent / page */
+.pill-nav.center-horizontal {
+  width: 100%;           /* take full width so justify-content centers correctly */
+  justify-content: center;
+}
+
+/* Center the nav in the viewport (absolute/overlay center) */
+.pill-nav.center-viewport {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Use this on a parent container to vertically center content inside the page */
+.center-vertical-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-logo {
+  position: absolute;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.pill-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.pill-items {
+  margin: 0 auto;              /* THIS is the key */
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.pill-item a {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--pill-text-color);
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.pill-item:hover a,
+.pill-item.active a {
+  background: var(--pill-color);
+  color: var(--pill-text-hover-color);
+  font-weight: 600;
+}
+
+/* Root wrapper for the nav (centering and internal spacing) */
+.pill-nav-root {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ensures pill-items center by default */
+  padding-left: 2rem; /* room for the left logo */
+  padding-right: 3.5rem; /* room for the toggle on the right */
+}
+
+/* Ensure pill-items remain centered inside the nav-root */
+.pill-nav-root .pill-items {
+  margin: 0 auto;
+}
+
+/* Theme toggle button (fixed inside nav at right) */
+.theme-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--base-color);
+  font-size: 1.05rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 50;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+[data-theme='dark'] .theme-toggle:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.theme-toggle .theme-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* Slightly increase hit area while keeping icon small */
+.theme-toggle {
+  padding: 0.4rem 0.55rem;
+  line-height: 0;
+}
+
+/* Small responsive tweak: reduce right padding on very small screens */
+@media (max-width: 420px) {
+  .pill-nav-root {
+    padding-right: 2rem;
+  }
+}
+

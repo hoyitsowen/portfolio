@@ -1,33 +1,29 @@
 import React from 'react';
-import '../styles/About.css';
+import ScrollReveal from './ScrollReveal';
+import WordHighlight from './WordHighlight';
 
 const About = () => {
   return (
-    <section className="about" id="about">
-      <div className="container">
-        <h2 className="section-title">About Me</h2>
-        <div className="about-grid">
-          <div className="about-text">
-            <p>I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that make a difference.</p>
-            <p>When I'm not coding, you can find me exploring new technologies or sharing knowledge with the community.</p>
-            <p>🌍 New York, NY</p>
-            <p>📧 john@example.com</p>
-            <p>📱 +1 (555) 123-4567</p>
-          </div>
-          <div className="stats-grid">
-            {[
-              ['50+', 'Projects Completed'],
-              ['5+', 'Years Experience'],
-              ['30+', 'Happy Clients'],
-              ['15+', 'Technologies']
-            ].map(([number, label], i) => (
-              <div className="stat-card" key={i}>
-                <div className="stat-number">{number}</div>
-                <div className="stat-label">{label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+    <section id="about" className="relative flex justify-center px-6 py-20 md:py-32 site-hero">
+      <div className="w-full max-w-4xl text-center stack stack--lg">
+        {/* Section label */}
+        <p className="text-sm uppercase tracking-widest text-accent font-clash">
+          About Me
+        </p>
+
+        {/* Main content */}
+        <ScrollReveal
+          baseOpacity={0}
+          enableBlur
+          baseRotation={3}
+          blurStrength={8}
+        >
+          <h2 className="text-3xl md:text-4xl font-semibold leading-relaxed max-prose mx-auto">
+            <WordHighlight stagger={60}>
+              I’m Owen Trinidad, with over 3+ years in frontend development, I’ve built 10+ React projects with a strong focus on clean UI and performance. My work focuses on performance, accessibility, and smooth user interactions — because good design should feel effortless.
+            </WordHighlight>
+          </h2>
+        </ScrollReveal>
       </div>
     </section>
   );

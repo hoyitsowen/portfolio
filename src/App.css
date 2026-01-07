@@ -1,13 +1,45 @@
+/* Importing Figtree and Clash Display fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700;800&display=swap');
+
 /* Reset some default browser styles */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
   margin: 0;
   padding: 0;
 }
 
+html, body {
+  font-family: 'Figtree', ui-sans-serif, system-ui, -apple-system, "Segoe UI", 'Clash Display', Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Theme variables (light = default) */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #84cc16; /* lime-300 */
+  --base-color: #000000;
+  --pill-color: #ffffff;
+  --pill-text-color: #000000;
+  --pill-text-hover-color: #000000;
+  transition: background 240ms ease, color 240ms ease;
+}
+
+/* Dark theme overrides */
+[data-theme='dark'] {
+  --bg: #0b0b0b;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --accent: #a3e635; /* lime-ish for dark */
+  --base-color: #ffffff;
+  --pill-color: #111827;
+  --pill-text-color: #ffffff;
+  --pill-text-hover-color: #ffffff;
+}
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f9f9f9;
-  color: #23272f;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.7;
   font-size: 18px;
   letter-spacing: 0.1px;
@@ -69,4 +101,52 @@ p {
   to {
     transform: rotate(360deg);
   }
+}
+
+.font-clash {
+  font-family: 'Clash Display', 'Figtree', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Make the Hero consume theme variables */
+.site-hero {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 240ms ease, color 240ms ease;
+}
+
+/* Small utility for muted text */
+.text-muted {
+  color: var(--muted);
+}
+
+/* Use accent variable for highlights if needed */
+.text-accent {
+  color: var(--accent);
+}
+
+/* Spacing tokens (adjust values here to change spacing across the site) */
+:root {
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-xxl: 4rem;
+}
+
+/* Vertical stack utility: apply consistent vertical spacing between children */
+.stack > * + * {
+  margin-top: var(--space-md);
+}
+.stack--xs > * + * { margin-top: var(--space-xs); }
+.stack--sm > * + * { margin-top: var(--space-sm); }
+.stack--lg > * + * { margin-top: var(--space-lg); }
+.stack--xl > * + * { margin-top: var(--space-xl); }
+
+/* Optional narrower text container for improved line length */
+.max-prose {
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
 }

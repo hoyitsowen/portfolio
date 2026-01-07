@@ -26,7 +26,12 @@ const Projects = () => {
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+        <p className="text-sm uppercase tracking-widest text-accent font-clash">
+          My Work
+        </p>
+        <h2>Selected Projects</h2>
+        <p className="text-balance">Here's a curated selection showcasing my expertise and the achieved results.</p>
+        
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div className="project-card" key={index}>

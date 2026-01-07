@@ -1,0 +1,15 @@
+.word-highlight-container {
+  display: inline;
+}
+
+.wh-word {
+  display: inline-block;
+  transition: color 240ms ease;
+  color: var(--muted, rgba(255,255,255,0.6)); /* starting muted color */
+  will-change: color;
+}
+
+/* When highlighted (added by JS), word turns to the primary text color */
+.wh-word.highlighted {
+  color: var(--text, #ffffff);
+}
