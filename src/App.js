@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -11,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 import PillNav from './components/PillNav';
 import logo from './assets/logo.svg';
+import StraightLoop from './components/StraightLoop';
 
 function App() {
   return (
@@ -34,9 +34,14 @@ function App() {
           pillTextColor="#000000"
         />
         <Hero />
+        <StraightLoop 
+          text="Design ✦ Build ✦ Deliver ✦ User Interfaces ✦ Experiences ✦"
+          speed={0.8}
+          className="text-[6rem] font-bold uppercase text-white"
+        />
         <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Contact />
         <Footer />
         <ScrollToTop />

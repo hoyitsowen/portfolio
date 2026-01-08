@@ -3,58 +3,98 @@ import '../styles/Projects.css';
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB...',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe']
+    title: 'TigerRoutes',
+    category: 'Development',
+    year: '2025',
+    image: '../assets/Project1.png',
+    link: ''
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates...',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=300&fit=crop',
-    tech: ['React', 'Firebase', 'Material-UI', 'Socket.io']
+    title: 'Pamana Restaurant',
+    category: 'Development & Design',
+    year: '2024',
+    image: '/projects/code.png',
+    link: '#'
   },
   {
-    title: 'AI Analytics Dashboard',
-    description: 'A responsive analytics dashboard with AI-powered insights...',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop',
-    tech: ['React', 'D3.js', 'Python', 'FastAPI']
+    title: 'Austins Cafe & Gastro Pub',
+    category: 'Development & Design',
+    year: '2024',
+    image: '/projects/austins.png',
+    link: '#'
+  },
+  {
   }
-];
 
-const Projects = () => {
+]
+
+export default function Projects() {
   return (
-    <section className="projects" id="projects">
-      <div className="container">
-        <p className="text-sm uppercase tracking-widest text-accent font-clash">
-          My Work
-        </p>
-        <h2>Selected Projects</h2>
-        <p className="text-balance">Here's a curated selection showcasing my expertise and the achieved results.</p>
-        
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index}>
-              <img src={project.image} alt={project.title} className="project-image" />
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                <div className="project-tech">
-                  {project.tech.map((t, i) => (
-                    <span className="tech-tag" key={i}>{t}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  <a href="#" className="project-link">🔍 Demo</a>
-                  <a href="#" className="project-link">📁 Code</a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+    <section className="relative w-full bg-black px-6 py-24 md:px-20">
+      {/* Header */}
+      <div className="mb-16 max-w-3xl">
+        <span className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-lime-400">
+          ✦ My Work
+        </span>
 
-export default Projects;
+        <h2 className="text-4xl font-semibold text-white md:text-5xl">
+          Selected Projects
+        </h2>
+
+        <p className="mt-4 text-base text-neutral-400">
+          Here’s a curated selection showcasing my expertise and the achieved results.
+        </p>
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <a
+            key={index}
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block"
+          >
+            {/* Image Card */}
+            <div className="relative overflow-hidden rounded-[28px] bg-neutral-900 p-10 transition-transform duration-500 group-hover:-translate-y-2">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full rounded-xl object-cover shadow-xl"
+              />
+            </div>
+
+            {/* Meta */}
+            <div className="mt-6 flex items-center justify-between">
+              <div>
+                <h3 className="text-xl font-medium text-white">
+                  {project.title}
+                </h3>
+                <p className="mt-1 text-sm text-neutral-400">
+                  {project.category}
+                </p>
+              </div>
+
+              <span className="text-sm text-neutral-500">
+                {project.year}
+              </span>
+            </div>
+          </a>
+          
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-white transition hover:border-white">
+          <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+            View All Projects
+          </span>
+          <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            View All Projects
+          </span>
+        </button>
+      </div>
+
+    </section>
+  )
+}

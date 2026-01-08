@@ -8,7 +8,7 @@ const About = () => {
       <div className="w-full max-w-4xl text-center stack stack--lg">
         {/* Section label */}
         <p className="text-sm uppercase tracking-widest text-accent font-clash">
-          About Me
+          ✦ About Me
         </p>
 
         {/* Main content */}

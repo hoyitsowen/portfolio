@@ -1,35 +1,58 @@
 import React from 'react';
 import '../styles/Skills.css';
+import FlowingMenu from './FlowingMenu';
+import LogoLoop from './LogoLoop';
+import { SiReact, SiTailwindcss, SiFigma, SiBootstrap, SiLaravel, SiMysql, SiGit, SiMariadb } from 'react-icons/si';
 
-const skills = [
-  ['React/Next.js', 95],
-  ['JavaScript/TypeScript', 90],
-  ['Node.js/Express', 85],
-  ['Python/Django', 80],
-  ['UI/UX Design', 75],
-  ['Database Management', 80]
+const demoItems = [
+          { link: '#', text: 'Development', image: 'https://picsum.photos/600/400?random=1' },
+          { link: '#', text: 'UI/UX Design', image: 'https://picsum.photos/600/400?random=2' },
+          { link: '#', text: 'Branding', image: 'https://picsum.photos/600/400?random=3' },
+        ];
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <SiFigma />, title: "Figma", href: "https://www.figma.com" },
+  { node: <SiBootstrap />, title: "Bootstrap", href: "https://getbootstrap.com" },
+  { node: <SiLaravel />, title: "Laravel", href: "https://laravel.com" },
+  { node: <SiMysql />, title: "MySQL", href: "https://www.mysql.com" },
+  { node: <SiGit />, title: "Git", href: "https://git-scm.com" },
+  { node: <SiMariadb />, title: "MariaDB", href: "https://mariadb.org" }
 ];
 
 const Skills = () => {
   return (
-    <section className="skills" id="skills">
-      <div className="container">
-        <h2 className="section-title">Skills & Expertise</h2>
-        <div className="skills-grid">
-          {skills.map(([name, percent], index) => (
-            <div className="skill-item" key={index}>
-              <div className="skill-header">
-                <span className="skill-name">{name}</span>
-                <span className="skill-percent">{percent}%</span>
-              </div>
-              <div className="skill-bar">
-                <div className="skill-fill" style={{ width: `${percent}%` }}></div>
-              </div>
-            </div>
-          ))}
+    <section className="relative w-full bg-black px-6 py-24 md:px-20">
+        <span className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-lime-400">
+          ✦ Specialty
+        </span>
+
+        <h2 className="text-4xl font-semibold text-white md:text-5xl">
+          Areas of Expertise
+        </h2>
+        <div style={{ height: '600px', position: 'relative' }}>
+          <FlowingMenu items={demoItems} />
         </div>
-      </div>
+
+        <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+      {/* Basic horizontal loop */}
+      <LogoLoop
+        logos={techLogos}
+        speed={120}
+        direction="left"
+        logoHeight={48}
+        gap={40}
+        hoverSpeed={0}
+        scaleOnHover
+        fadeOut
+        fadeOutColor="#ffffff"
+        ariaLabel="Technology partners"
+      />
+    </div>
     </section>
+
+    
   );
 };
 
