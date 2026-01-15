@@ -1,13 +1,16 @@
 import React from "react";
+import StraightLoop from './StraightLoop';
+import { HiOutlineHandRaised } from "react-icons/hi2";
+import '../styles/Hero.css';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen site-hero">
+    <section className="relative min-h-screen site-hero bg-white dark:bg-[#141414]">
       <div className="mx-auto max-w-7xl px-6 pt-32 lg:px-8">
 
         {/* Top intro */}
-        <p className="mt-8 mb-6 flex items-center gap-2 text-sm text-muted">
-          👋 Hey! It’s me, Owen
+        <p className="mt-8 mb-6 flex items-center gap-2 text-base text-muted">
+          <HiOutlineHandRaised className="text-2xl text-accent wave" /> Hey! It’s me, Owen.
         </p>
 
         {/* Main grid */}
@@ -15,7 +18,7 @@ const Hero = () => {
 
           {/* LEFT – Headline */}
           <div className="lg:col-span-8">
-            <h1 className="text-balance text-5xl font-extrabold leading-tight sm:text-6xl xl:text-7xl font-clash">
+            <h1 className="text-balance text-5xl font-extrabold leading-tight sm:text-6xl xl:text-7xl font-clash text-black dark:text-white">
               Building{" "}
               <span className="text-accent">
                 meaningful digital experiences
@@ -32,7 +35,7 @@ const Hero = () => {
               for clarity, performance, and impact.
             </p>
 
-           <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-white transition hover:border-white">
+           <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-white">
             {/* Default text */}
             <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
               Know me better →
@@ -52,7 +55,15 @@ const Hero = () => {
           <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-white">INSTAGRAM ↗</a>
           <a href="mailto:owen.trinidad23@gmail.com" className="hover:text-white">GMAIL ↗</a>
         </div>
+      </div>
 
+      {/* Full width StraightLoop */}
+      <div className="mt-20">
+        <StraightLoop
+          text="Design ✦ Build ✦ Deliver ✦ User Interfaces ✦ Experiences ✦ Development ✦ Solutions ✦"
+          speed={0.8}
+          className="text-[6rem] font-bold uppercase text-black dark:text-white"
+        />
       </div>
     </section>
   );

@@ -30,18 +30,18 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="relative w-full bg-black px-6 py-24 md:px-20">
+    <section className="relative w-full bg-white dark:bg-[#141414] px-6 py-24 md:px-20">
       {/* Header */}
       <div className="mb-16 max-w-3xl">
         <span className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-lime-400">
           ✦ My Work
         </span>
 
-        <h2 className="text-4xl font-semibold text-white md:text-5xl">
+        <h2 className="text-4xl font-semibold text-black dark:text-white md:text-5xl">
           Selected Projects
         </h2>
 
-        <p className="mt-4 text-base text-neutral-400">
+        <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400">
           Here’s a curated selection showcasing my expertise and the achieved results.
         </p>
       </div>
@@ -68,15 +68,15 @@ export default function Projects() {
             {/* Meta */}
             <div className="mt-6 flex items-center justify-between">
               <div>
-                <h3 className="text-xl font-medium text-white">
+                <h3 className="text-xl font-medium text-black dark:text-white">
                   {project.title}
                 </h3>
-                <p className="mt-1 text-sm text-neutral-400">
+                <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
                   {project.category}
                 </p>
               </div>
 
-              <span className="text-sm text-neutral-500">
+              <span className="text-sm text-neutral-700 dark:text-neutral-500">
                 {project.year}
               </span>
             </div>
@@ -85,7 +85,7 @@ export default function Projects() {
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-white transition hover:border-white">
+        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-white">
           <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
             View All Projects
           </span>

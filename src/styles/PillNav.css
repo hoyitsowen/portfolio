@@ -121,6 +121,10 @@
   fill: none;
 }
 
+.dark .theme-toggle .sun-icon {
+  stroke: #9ca3af !important;
+}
+
 /* Slightly increase hit area while keeping icon small */
 .theme-toggle {
   padding: 0.4rem 0.55rem;

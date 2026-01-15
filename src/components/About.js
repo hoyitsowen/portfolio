@@ -4,7 +4,7 @@ import WordHighlight from './WordHighlight';
 
 const About = () => {
   return (
-    <section id="about" className="relative flex justify-center px-6 py-20 md:py-32 site-hero">
+    <section id="about" className="relative flex justify-center px-3 py-20 md:py-32 site-hero bg-white dark:bg-[#141414]">
       <div className="w-full max-w-4xl text-center stack stack--lg">
         {/* Section label */}
         <p className="text-sm uppercase tracking-widest text-accent font-clash">
