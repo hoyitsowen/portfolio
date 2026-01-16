@@ -28,15 +28,18 @@ const Skills = () => {
           ✦ Specialty
         </span>
 
-        <h2 className="text-4xl font-semibold text-white md:text-5xl">
+        <h2 className="text-4xl font-semibold font-clash text-black dark:text-white md:text-5xl">
           Areas of Expertise
         </h2>
-        <div style={{ height: '600px', position: 'relative' }}>
+        <div style={{ height: '600px', position: 'relative' }}
+            className="mt-10 mb-10 font-sans">
           <FlowingMenu items={demoItems} />
         </div>
 
         <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+      
       {/* Basic horizontal loop */}
+      <div className="mt-20 mb-10 text-2xl font-semibold text-black dark:text-white">
       <LogoLoop
         logos={techLogos}
         speed={120}
@@ -48,7 +51,9 @@ const Skills = () => {
         fadeOut
         fadeOutColor="#ffffff"
         ariaLabel="Technology partners"
+        className="text-[6rem] py-4"
       />
+      </div>
     </div>
     </section>
 

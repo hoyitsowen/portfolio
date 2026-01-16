@@ -41,7 +41,7 @@ export default function Projects() {
           Selected Projects
         </h2>
 
-        <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400">
+        <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400 font-sans">
           Here’s a curated selection showcasing my expertise and the achieved results.
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function Projects() {
             </div>
 
             {/* Meta */}
-            <div className="mt-6 flex items-center justify-between">
+            <div className="mt-6 flex items-center justify-between font-sans">
               <div>
                 <h3 className="text-xl font-medium text-black dark:text-white">
                   {project.title}
@@ -84,8 +84,8 @@ export default function Projects() {
           
         ))}
       </div>
-      <div className="flex justify-center">
-        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-white">
+      <div className="flex justify-center font-sans">
+        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-md font-medium text-black dark:text-white transition hover:border-white">
           <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
             View All Projects
           </span>

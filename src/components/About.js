@@ -18,7 +18,7 @@ const About = () => {
           baseRotation={3}
           blurStrength={8}
         >
-          <h2 className="text-3xl md:text-4xl font-semibold leading-relaxed max-prose mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-relaxed max-prose mx-auto font-sans">
             <WordHighlight stagger={60}>
               I’m Owen Trinidad, with over 3+ years in frontend development, I’ve built 10+ React projects with a strong focus on clean UI and performance. My work focuses on performance, accessibility, and smooth user interactions — because good design should feel effortless.
             </WordHighlight>

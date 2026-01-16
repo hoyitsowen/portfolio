@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="mx-auto max-w-7xl px-6 pt-32 lg:px-8">
 
         {/* Top intro */}
-        <p className="mt-8 mb-6 flex items-center gap-2 text-base text-muted">
+        <p className="mt-8 mb-6 flex items-center gap-2 text-base text-muted font-sans">
           <HiOutlineHandRaised className="text-2xl text-accent wave" /> Hey! It’s me, Owen.
         </p>
 
@@ -18,7 +18,7 @@ const Hero = () => {
 
           {/* LEFT – Headline */}
           <div className="lg:col-span-8">
-            <h1 className="text-balance text-5xl font-extrabold leading-tight sm:text-6xl xl:text-7xl font-clash text-black dark:text-white">
+            <h1 className="text-balance text-5xl font-medium font-clash leading-tight sm:text-6xl xl:text-7xl text-black dark:text-white">
               Building{" "}
               <span className="text-accent">
                 meaningful digital experiences
@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
 
           {/* RIGHT – Supporting text */}
-          <div className="lg:col-span-4 flex flex-col justify-end">
+          <div className="lg:col-span-4 flex flex-col justify-end font-sans">
             <p className="text-sm leading-relaxed text-muted">
               I design and develop clean, user-focused web experiences by
               blending thoughtful design—always aiming
@@ -49,20 +49,19 @@ const Hero = () => {
         </div>
 
         {/* Bottom links */}
-        <div className="mt-20 flex gap-6 text-xs text-gray-500">
+        <div className="mt-20 flex gap-6 text-xs text-gray-500 font-sans">
           <a href="https://www.linkedin.com/in/hoyitsowen/" className="hover:text-white">LINKEDIN ↗</a>
           <a href="https://github.com/hoyitsowen" className="hover:text-white">GITHUB ↗</a>
           <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-white">INSTAGRAM ↗</a>
           <a href="mailto:owen.trinidad23@gmail.com" className="hover:text-white">GMAIL ↗</a>
         </div>
       </div>
-
-      {/* Full width StraightLoop */}
+      
       <div className="mt-20">
         <StraightLoop
           text="Design ✦ Build ✦ Deliver ✦ User Interfaces ✦ Experiences ✦ Development ✦ Solutions ✦"
           speed={0.8}
-          className="text-[6rem] font-bold uppercase text-black dark:text-white"
+          className="text-[6rem] font-medium uppercase text-black dark:text-white"
         />
       </div>
     </section>
