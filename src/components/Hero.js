@@ -1,6 +1,7 @@
 import React from "react";
 import StraightLoop from './StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
+import { LuArrowUpRight } from "react-icons/lu";
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -49,7 +50,8 @@ const Hero = () => {
         </div>
 
         {/* Bottom links */}
-        <div className="mt-20 flex gap-6 text-xs text-gray-500 font-sans">
+        <div className="mt-20 relative flex gap-6 text-sm text-gray-700 font-sans">
+          <div className="absolute -top-4 left-0 w-1/2 border-t border-gray-700"></div>
           <a href="https://www.linkedin.com/in/hoyitsowen/" className="hover:text-white">LINKEDIN ↗</a>
           <a href="https://github.com/hoyitsowen" className="hover:text-white">GITHUB ↗</a>
           <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-white">INSTAGRAM ↗</a>

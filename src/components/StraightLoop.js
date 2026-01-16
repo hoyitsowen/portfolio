@@ -20,9 +20,12 @@ const StraightLoop = ({
         const dir = direction === 'right' ? 1 : -1;
         offsetRef.current += dir * speed;
 
-        const width = trackRef.current.scrollWidth / 2;
-        if (offsetRef.current <= -width) offsetRef.current = 0;
-        if (offsetRef.current >= 0) offsetRef.current = -width;
+        const spanWidth = trackRef.current.scrollWidth / 2;
+        if (direction === 'left') {
+          if (offsetRef.current <= -spanWidth) offsetRef.current += spanWidth;
+        } else {
+          if (offsetRef.current >= spanWidth) offsetRef.current -= spanWidth;
+        }
 
         trackRef.current.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
       }
