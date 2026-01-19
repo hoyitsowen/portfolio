@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/ScrollToTop.css';
+import { FaChevronUp } from "react-icons/fa";
 
 const ScrollToTop = () => {
   const scrollUp = () => {
@@ -8,7 +9,7 @@ const ScrollToTop = () => {
 
   return (
     <div className="scroll-top" onClick={scrollUp}>
-      ↑
+      <FaChevronUp />
     </div>
   );
 };

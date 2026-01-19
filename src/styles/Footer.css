@@ -1,4 +1,4 @@
-.footer {
+/** .footer {
   background: #0a0a0a;
   padding: 40px 0;
   text-align: center;
@@ -28,4 +28,5 @@
 .social-link:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-}
+} **/
+ 
