@@ -24,7 +24,7 @@ const techLogos = [
 const Skills = () => {
   return (
     <section className="relative w-full bg-white dark:bg-[#141414] px-6 pb-14 md:px-20">
-        <span className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-lime-400">
+        <span className="mb-4 inline-flex items-center gap-2 text-sm font-clash uppercase tracking-wide text-lime-400">
           ✦ Specialty
         </span>
 

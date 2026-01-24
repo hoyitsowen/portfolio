@@ -33,7 +33,7 @@ export default function Projects() {
     <section className="relative w-full bg-white dark:bg-[#141414] px-6 pb-14 md:px-20">
       {/* Header */}
       <div className="mb-16 max-w-3xl">
-        <span className="mb-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-lime-400">
+        <span className="mb-4 inline-flex items-center gap-2 text-sm font-clash uppercase tracking-wide text-lime-400">
           ✦ My Work
         </span>
 
