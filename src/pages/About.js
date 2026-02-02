@@ -1,6 +1,6 @@
 import React from 'react';
-import ScrollReveal from './ScrollReveal';
-import WordHighlight from './WordHighlight';
+import ScrollReveal from '../components/ScrollReveal';
+import WordHighlight from '../components/WordHighlight';
 
 const About = () => {
   return (
@@ -20,7 +20,7 @@ const About = () => {
         >
           <h2 className="text-3xl md:text-4xl font-semibold font-sans leading-relaxed max-prose mx-auto dark:text-white">
             <WordHighlight stagger={60}>
-              I’m Owen Trinidad, with over 3+ years in frontend development, I’ve built 10+ React projects with a strong focus on clean UI and performance. My work focuses on performance, accessibility, and smooth user interactions — because good design should feel effortless.
+              I’m Owen Trinidad, with over 3+ years in frontend development, I’ve built React projects with a strong focus on clean UI and performance. My work focuses on performance, accessibility, and smooth user interactions — because good design should feel effortless.
             </WordHighlight>
           </h2>
         </ScrollReveal>

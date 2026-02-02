@@ -1,5 +1,5 @@
 import React from "react";
-import StraightLoop from './StraightLoop';
+import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { LuArrowUpRight } from "react-icons/lu";
 import '../styles/Hero.css';

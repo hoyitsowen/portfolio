@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Skills.css';
-import FlowingMenu from './FlowingMenu';
-import LogoLoop from './LogoLoop';
+import FlowingMenu from '../components/FlowingMenu';
+import LogoLoop from '../components/LogoLoop';
 import { SiReact, SiTailwindcss, SiFigma, SiBootstrap, SiLaravel, SiMysql, SiGit, SiMariadb } from 'react-icons/si';
 
 const demoItems = [
