@@ -1,5 +1,6 @@
 import React from 'react';
 import LogoLoop from '../components/LogoLoop';
+import Testimonials from './Testimonials';
 import {
   HiOutlineArrowRight,
   HiOutlineCodeBracket,

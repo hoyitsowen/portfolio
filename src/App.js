@@ -4,6 +4,7 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import AboutPage from './pages/AboutPage';
 import Skills from './pages/Skills';
+import Testimonials from './pages/Testimonials';
 import Projects from './pages/Projects';
 import Footer from './pages/Footer';
 import ScrollToTop from './pages/ScrollToTop';
@@ -48,6 +49,7 @@ function AppContent() {
             <About />
             <Projects />
             <Skills />
+            <Testimonials />
             <Footer />
           </>
         } />
