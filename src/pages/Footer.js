@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
 
           {/* Title */}
-          <h2 className="mx-auto max-w-3xl text-center text-4xl text-black dark:text-white font-medium leading-tight tracking-tight sm:text-5xl">
+          <h2 className="mx-auto max-w-3xl text-center text-4xl text-black dark:text-white font-medium font-clash leading-tight tracking-tight sm:text-5xl">
             Let&apos;s create your <br className="hidden sm:block" />
             next big idea.
           </h2>
