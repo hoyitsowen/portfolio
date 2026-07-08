@@ -1,31 +1,56 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Award, Briefcase, Cpu, MousePointer2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ExternalLink, Award, Briefcase, Cpu, GraduationCap, ChevronDown,
+  Brain, PenTool, Figma, Code 
+} from 'lucide-react';
 import Lanyard from '../components/Lanyard';
 import Footer from '../pages/Footer';
 
 const AboutPage = () => {
-  // Data for the sections
   const skills = ["React", "TypeScript", "Next.js", "Tailwind", "Framer Motion", "Three.js", "Node", "Figma"];
   
   const experiences = [
-    { role: "SAP BTP Integration Intern", 
+    { 
+      id: 1, 
+      role: "SAP BTP Integration Intern", 
       company: "Accenture", 
       year: "Jan 2026 — May 2026", 
       points: [
-        "Selected as one of the internship delegates for Accenture’s SAP BTP Integration program, completing intensive technical training in enterprise integration technologies.",
         "Executed hands-on SAP Process Integration and SAP BTP Integration Suite exercises, strengthening practical skills in system connectivity and integration workflows.",
         "Applied SAP Business Suite and BTP concepts in simulated business scenarios, improving understanding of enterprise application integration and automation.",
+        "Designed, deployed, and monitored integration flows (iFlows), applying message mapping and transformation techniques to ensure accurate system-to-system communication.",
         "Collaborated in technical learning activities and guided exercises, enhancing problem-solving and SAP development competencies in cloud-based environments.",
-      ] },
+      ] 
+    },
+    // Add additional experience objects here to fill the list
   ];
+
+  const education = {
+    degree: "Bachelor of Science in Information Technology",
+    school: "University of Santo Tomas",
+    specilization: "Specialization in Web and Mobile Application Development",
+    year: "Aug 2022 — Jun 2026"
+  };
 
   const awards = [
     { title: "Foundations of User Experience (UX) Design", issuer: "Google", year: "2025", link: "https://coursera.org/share/f08c40bcd881965b89de73eaeb57e70c" },
     { title: "First Term Dean's List", issuer: "University of Santo Tomas", year: "2022", link: "#" },
   ];
 
-  // Framer Motion Variants
+  const designProcess = [
+    { step: "01", title: "Strategize", icon: Brain, desc: "Deep dive into research, requirements gathering, and mapping user goals." },
+    { step: "02", title: "Wireframe", icon: PenTool, desc: "Creating low-fidelity structures to define content hierarchy and layout flows." },
+    { step: "03", title: "Design", icon: Figma, desc: "Crafting modern, pixel-perfect user interfaces with comprehensive design systems." },
+    { step: "04", title: "Development", icon: Code, desc: "Coding high-performance production-ready frontend components." }
+  ];
+
+  const [expandedId, setExpandedId] = useState(1);
+
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -36,17 +61,16 @@ const AboutPage = () => {
   return (
     <div className="bg-white dark:bg-[#141414] text-black dark:text-white transition-colors duration-500 font-sans selection:bg-lime-400 selection:text-black">
       
-      {/* 1. HERO SECTION: Balanced & Interactive */}
+      {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center px-6 md:px-16 overflow-hidden">
-        {/* Subtle Lanyard integration for depth */}
         <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block opacity-80 pointer-events-none">
           <Lanyard position={[0, 0, 15]} gravity={[0, -30, 0]} />
         </div>
 
-        <div className="max-w-4xl relative z-10">
+        <div className="w-full max-w-6xl mx-auto relative z-10">
           <motion.div {...fadeInUp} className="flex items-center gap-2 mb-6">
             <span className="w-8 h-[1px] bg-lime-500"></span>
-            <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Freelance</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Hire</p>
           </motion.div>
           
           <motion.h1 
@@ -54,8 +78,8 @@ const AboutPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-6xl md:text-8xl font-medium font-clash dark:text-white leading-[0.95] mb-8"
           >
-            Digital products <br />
-            <span className="text-gray-400 dark:text-gray-600">with a soul.</span>
+            Owen <br />
+            <span className="text-gray-400 dark:text-gray-600">Trinidad</span>
           </motion.h1>
 
           <motion.p 
@@ -64,24 +88,31 @@ const AboutPage = () => {
             transition={{ delay: 0.3 }}
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed mb-10"
           >
-            I’m a UI/UX Frontend Developer hybrid who loves turning complex problems into 
-            simple, beautiful, and accessible digital experiences.
+            Based in Manila, Philippines, I design and build intuitive digital 
+            experiences through a blend of UI/UX design and front-end development.
           </motion.p>
 
           <div className="flex gap-4">
-             <button className="px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2">
-                My Resume <ExternalLink size={18} />
-             </button>
+            <a
+              href="/Michael Owen Trinidad - Resume.pdf"
+              download="Michael Owen Trinidad - Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            >
+              My Resume
+              <ExternalLink size={18} />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 2. TECH MARQUEE: Smooth Scroller */}
+      {/* 2. TECH MARQUEE */}
       <div className="py-8 border-y border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/0 overflow-hidden">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-          className="flex gap-8 whitespace-nowrap items-center"
+          className="flex gap-8 whitespace-nowrap items-center max-w-6xl mx-auto"
         >
           {[...skills, ...skills].map((skill, i) => (
             <div key={i} className="flex items-center gap-4 text-2xl font-clash font-medium opacity-30 hover:opacity-100 transition-opacity cursor-default">
@@ -92,85 +123,187 @@ const AboutPage = () => {
         </motion.div>
       </div>
 
-      {/* --- 3. EXPERIENCE & AWARDS SECTION --- */}
-    <section className="py-24 px-6 md:px-16 max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-2 gap-x-16 gap-y-12 items-start">
+      {/* --- CONTENT WRAPPER --- */}
+      <div className="max-w-6xl mx-auto px-6 md:px-16 py-12 space-y-32">
 
-        {/* Left Column: Experience */}
-        <div className="flex flex-col">
-          {/* Header aligned with right side */}
-          <div className="flex items-center gap-4 mb-12 h-[60px]">
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10">
-              <Briefcase size={22} />
+        {/* SECTION 3: EXPERIENCE */}
+        <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
+          {/* Left Side Header Block */}
+          <div className="space-y-4 md:sticky md:top-12">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
+              <Briefcase size={14} className="text-lime-500" />
+              Work History
             </div>
-            <h2 className="text-3xl font-bold font-clash dark:text-white leading-none">Experience</h2>
+            <h2 className="text-4xl font-bold font-clash dark:text-white tracking-tight">
+              Experience
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+                A collection of experiences where I've collaborated, learned, and built digital solutions that solve real-world problems.
+            </p>
           </div>
 
-          {/* Experience List - Removed space-y to control first item alignment */}
-          <div className="flex flex-col">
-            {experiences.map((exp, i) => (
-              <motion.div 
-                {...fadeInUp} 
-                key={i} 
-                className={`relative pl-8 border-l border-gray-200 dark:border-white/10 ${i !== 0 ? 'mt-10' : ''}`}
-              >
-                {/* Timeline Dot: Positioned exactly at the top of the first line */}
-                <div className="absolute -left-[5px] top-[6px] w-2.5 h-2.5 rounded-full bg-lime-500 shadow-[0_0_10px_rgba(132,204,22,0.5)]" />
-                
-                <span className="text-sm font-mono text-gray-500 mb-2 block leading-none">
-                  {exp.year}
-                </span>
-                
-                <h3 className="text-xl font-bold dark:text-white mb-1">{exp.role}</h3>
-                <p className="text-lime-600 dark:text-lime-400 font-medium mb-6">{exp.company}</p>
-                
-                {/* Bullet Points - Removed {exp.desc} to fix the gap */}
-                <ul className="space-y-4">
-                  {exp.points.map((point, idx) => (
-                    <li key={idx} className="flex gap-3 text-gray-600 dark:text-gray-400 text-[15px] leading-relaxed">
-                      <span className="text-lime-500 mt-1.5 flex-shrink-0 text-[10px]">●</span>
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          {/* Right Side Experience List */}
+          <div className="flex flex-col border-t border-gray-100 dark:border-white/5 w-full">
+            {experiences.map((exp, i) => {
+              const isExpanded = expandedId === exp.id;
 
-        {/* Right Column: Awards */}
-        <div className="flex flex-col">
-          {/* Header aligned with left side */}
-          <div className="flex items-center gap-4 mb-12 h-[60px]">
-            <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-100 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10">
-              <Award size={22} />
+              return (
+                <motion.div 
+                  {...fadeInUp} 
+                  key={exp.id || i} 
+                  className="border-b border-gray-100 dark:border-white/5 transition-colors duration-300"
+                >
+                  <button
+                    onClick={() => toggleExpand(exp.id || i)}
+                    className="w-full flex items-start justify-between py-6 text-left focus:outline-none group"
+                  >
+                    <div className="space-y-1.5 pr-4">
+                      <h3 className="text-xl font-bold dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">
+                        {exp.role}
+                      </h3>
+                      <p className="text-gray-400 font-medium text-sm">
+                        @{exp.company}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <span className="text-xs font-mono text-gray-500 whitespace-nowrap">
+                        {exp.year}
+                      </span>
+                      <div className="p-1 rounded-lg bg-gray-50 dark:bg-white/5 text-gray-400 group-hover:text-lime-500 transition-all">
+                        <ChevronDown 
+                          size={16} 
+                          className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} 
+                        />
+                      </div>
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <ul className="pb-6 space-y-4 pl-1">
+                          {exp.points.map((point, idx) => (
+                            <li key={idx} className="flex gap-3 text-gray-600 dark:text-gray-400 text-[15px] leading-relaxed">
+                              <span className="text-lime-500 mt-1.5 flex-shrink-0 text-[10px]">●</span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+            
+            {/* Show More Trigger */}
+            <div className="text-center pt-6">
+              <button className="text-xs tracking-wider text-gray-400 dark:text-gray-500 hover:text-lime-500 dark:hover:text-white transition-colors uppercase font-medium">
+                Show More
+              </button>
             </div>
-            <h2 className="text-3xl font-bold font-clash dark:text-white leading-none">Awards & Certifications</h2>
+          </div>
+        </section>
+
+        {/* SECTION 4: MY DESIGN PROCESS */}
+        <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
+          {/* Left Side Header Block */}
+          <div className="space-y-4 md:sticky md:top-12">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse"></span>
+              Steps I Follow
+            </div>
+            <h2 className="text-4xl font-bold font-clash dark:text-white tracking-tight">
+              My Design Process
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+              A structured approach that transforms ideas into intuitive, user-centered digital experiences.
+            </p>
           </div>
 
-          {/* Awards Grid - Matches the top starting point of Experience */}
-          <div className="grid gap-4">
-            {awards.map((award, i) => (
-              <motion.a 
-                href={award.link}
-                key={i}
-                whileHover={{ x: 10 }}
-                className="flex items-center justify-between p-7 rounded-2xl bg-gray-50 dark:bg-white/5 border border-transparent hover:border-lime-500/30 transition-all group"
-              >
-                <div className="space-y-1">
-                  <h4 className="text-lg font-bold dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">
-                    {award.title}
-                  </h4>
-                  <p className="text-sm text-gray-500">{award.issuer} • {award.year}</p>
-                </div>
-                <ExternalLink size={18} className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.a>
-            ))}
+          {/* Right Side Process Cards Grid */}
+          <div className="grid sm:grid-cols-2 gap-4 w-full">
+            {designProcess.map((proc, i) => {
+              const ProcessIcon = proc.icon;
+              return (
+                <motion.div 
+                  {...fadeInUp}
+                  key={i} 
+                  className="p-6 rounded-2xl bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 hover:border-lime-500/20 transition-all duration-300 space-y-4 group"
+                >
+                  <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/5 rounded-xl text-gray-500 group-hover:text-lime-500 transition-colors">
+                    <ProcessIcon size={20} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-lime-600 dark:text-lime-400 font-bold block mb-1">
+                      {proc.step}. {proc.title}
+                    </span>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {proc.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-        </div>
+        </section>
+
+        {/* SECTION 5: EDUCATION & CERTIFICATIONS */}
+        <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
+          {/* Left Side Header Block */}
+          <div className="space-y-4 md:sticky md:top-12">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
+              <GraduationCap size={14} className="text-lime-500" />
+              Credentials
+            </div>
+            <h2 className="text-4xl font-bold font-clash dark:text-white tracking-tight">
+              Education & Awards
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+              Academic background and professional milestones achieved throughout my career.
+            </p>
+          </div>
+
+          {/* Right Side Education card stacked over Awards Grid */}
+          <div className="w-full space-y-8">
+            {/* Education box */}
+            <motion.div {...fadeInUp} className="p-7 w-full bg-gray-50/50 dark:bg-white/[0.02] rounded-2xl border border-gray-100 dark:border-white/5">
+              <p className="text-sm font-mono text-gray-500 mb-2">{education.year}</p>
+              <h4 className="text-xl font-bold dark:text-white mb-1">{education.degree}</h4>
+              <p className="text-lime-600 dark:text-lime-400 font-medium">{education.school}</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">{education.specilization}</p>
+            </motion.div>
+
+            {/* Awards listing */}
+            <div className="grid gap-4 w-full">
+              {awards.map((award, i) => (
+                <motion.a 
+                  href={award.link}
+                  key={i}
+                  whileHover={{ x: 10 }}
+                  className="flex items-center justify-between p-6 rounded-2xl bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 hover:border-lime-500/30 transition-all group"
+                >
+                  <div className="space-y-1">
+                    <h4 className="text-lg font-bold dark:text-white group-hover:text-lime-600 dark:group-hover:text-lime-400 transition-colors">
+                      {award.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 dark:text-gray-500">{award.issuer} • {award.year}</p>
+                  </div>
+                  <ExternalLink size={16} className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
 
       </div>
-    </section>
 
       <Footer />
     </div>
