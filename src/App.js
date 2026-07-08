@@ -6,6 +6,7 @@ import AboutPage from './pages/AboutPage';
 import Skills from './pages/Skills';
 import Testimonials from './pages/Testimonials';
 import Projects from './pages/Projects';
+import ContactPage from './pages/ContactPage';
 import Footer from './pages/Footer';
 import ScrollToTop from './pages/ScrollToTop';
 import './App.css';
@@ -55,7 +56,7 @@ function AppContent() {
         } />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<div>Services Page Coming Soon</div>} />
-        <Route path="/contact" element={<div>Contact Page Coming Soon</div>} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <ScrollToTop />
     </>
