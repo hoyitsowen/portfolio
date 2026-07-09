@@ -32,7 +32,7 @@ function AppContent() {
         items={[
           { label: 'Home', href: '/' },
           { label: 'About', href: '/about' },
-          { label: 'Services', href: '/services' },
+          { label: 'Projects', href: '/projects' },
           { label: 'Contact', href: '/contact' }
         ]}
         activeHref={location.pathname}
@@ -55,7 +55,7 @@ function AppContent() {
           </>
         } />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/services" element={<div>Services Page Coming Soon</div>} />
+        <Route path="/projects" element={<div>Services Page Coming Soon</div>} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <ScrollToTop />

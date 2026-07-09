@@ -40,9 +40,9 @@ const AboutPage = () => {
 
   const designProcess = [
     { step: "01", title: "Strategize", icon: Brain, desc: "Deep dive into research, requirements gathering, and mapping user goals." },
-    { step: "02", title: "Wireframe", icon: PenTool, desc: "Creating low-fidelity structures to define content hierarchy and layout flows." },
-    { step: "03", title: "Design", icon: Figma, desc: "Crafting modern, pixel-perfect user interfaces with comprehensive design systems." },
-    { step: "04", title: "Development", icon: Code, desc: "Coding high-performance production-ready frontend components." }
+    { step: "02", title: "Wireframe", icon: PenTool, desc: "Structuring user flows and mapping out low-fidelity blueprints to establish clean layout hierarchies." },
+    { step: "03", title: "Design", icon: Figma, desc: "Designing responsive, premium digital interfaces utilizing scalable Figma component libraries." },
+    { step: "04", title: "Development", icon: Code, desc: "Coding scalable frontend architectures with clean, modern, and performant web technologies." }
   ];
 
   const [expandedId, setExpandedId] = useState(1);
@@ -70,7 +70,7 @@ const AboutPage = () => {
         <div className="w-full max-w-6xl mx-auto relative z-10">
           <motion.div {...fadeInUp} className="flex items-center gap-2 mb-6">
             <span className="w-8 h-[1px] bg-lime-500"></span>
-            <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Hire</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Work</p>
           </motion.div>
           
           <motion.h1 
@@ -130,7 +130,7 @@ const AboutPage = () => {
         <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
           {/* Left Side Header Block */}
           <div className="space-y-4 md:sticky md:top-12">
-            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-clash text-xs tracking-widest uppercase">
               <Briefcase size={14} className="text-lime-500" />
               Work History
             </div>
@@ -212,54 +212,11 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* SECTION 4: MY DESIGN PROCESS */}
+        {/* SECTION 4: EDUCATION & CERTIFICATIONS */}
         <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
           {/* Left Side Header Block */}
           <div className="space-y-4 md:sticky md:top-12">
-            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse"></span>
-              Steps I Follow
-            </div>
-            <h2 className="text-4xl font-bold font-clash dark:text-white tracking-tight">
-              My Design Process
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
-              A structured approach that transforms ideas into intuitive, user-centered digital experiences.
-            </p>
-          </div>
-
-          {/* Right Side Process Cards Grid */}
-          <div className="grid sm:grid-cols-2 gap-4 w-full">
-            {designProcess.map((proc, i) => {
-              const ProcessIcon = proc.icon;
-              return (
-                <motion.div 
-                  {...fadeInUp}
-                  key={i} 
-                  className="p-6 rounded-2xl bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 hover:border-lime-500/20 transition-all duration-300 space-y-4 group"
-                >
-                  <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/5 rounded-xl text-gray-500 group-hover:text-lime-500 transition-colors">
-                    <ProcessIcon size={20} />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-lime-600 dark:text-lime-400 font-bold block mb-1">
-                      {proc.step}. {proc.title}
-                    </span>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {proc.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* SECTION 5: EDUCATION & CERTIFICATIONS */}
-        <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
-          {/* Left Side Header Block */}
-          <div className="space-y-4 md:sticky md:top-12">
-            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-semibold text-xs tracking-widest uppercase">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-clash text-xs tracking-widest uppercase">
               <GraduationCap size={14} className="text-lime-500" />
               Credentials
             </div>
@@ -300,6 +257,49 @@ const AboutPage = () => {
                 </motion.a>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* SECTION 5: MY DESIGN PROCESS */}
+        <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
+          {/* Left Side Header Block */}
+          <div className="space-y-4 md:sticky md:top-12">
+            <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-clash text-xs tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-lime-500 animate-pulse"></span>
+              How I Work
+            </div>
+            <h2 className="text-4xl font-bold font-clash dark:text-white tracking-tight">
+              My Design Process
+            </h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+              A structured approach that transforms ideas into intuitive, user-centered digital experiences.
+            </p>
+          </div>
+
+          {/* Right Side Process Cards Grid */}
+          <div className="grid sm:grid-cols-2 gap-4 w-full">
+            {designProcess.map((proc, i) => {
+              const ProcessIcon = proc.icon;
+              return (
+                <motion.div 
+                  {...fadeInUp}
+                  key={i} 
+                  className="p-6 rounded-2xl bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 hover:border-lime-500/20 transition-all duration-300 space-y-4 group"
+                >
+                  <div className="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-white/5 rounded-xl text-gray-500 group-hover:text-lime-500 transition-colors">
+                    <ProcessIcon size={20} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-lime-600 dark:text-lime-400 font-bold block mb-1">
+                      {proc.step}. {proc.title}
+                    </span>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                      {proc.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </section>
 

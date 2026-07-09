@@ -1,6 +1,7 @@
 import React from "react";
 import { FiLinkedin, FiGithub, FiInstagram, FiMail } from "react-icons/fi";
 import { SlSocialBehance } from "react-icons/sl";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -24,14 +25,14 @@ const Footer = () => {
 
           {/* Button */}
           <div className="flex justify-center font-sans">
-        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-white">
+        <Link to="/contact" className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
           <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
             Contact Me
           </span>
           <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             Contact Me
           </span>
-        </button>
+        </Link>
       </div>
         </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { LuArrowUpRight } from "react-icons/lu";
@@ -36,10 +37,12 @@ const Hero = () => {
               for clarity, performance, and impact.
             </p>
 
-           <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-white">
+           <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
             {/* Default text */}
             <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-              Know me better →
+              <Link to="/about" className="text-current">
+                Know me better →
+              </Link>
             </span>
             {/* Hover text */}
             <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">

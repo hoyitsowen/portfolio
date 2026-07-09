@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Projects.css';
+import { Link } from 'react-router-dom';
 
 const projects = [
   {
@@ -38,7 +39,7 @@ export default function Projects() {
         </span>
 
         <h2 className="text-4xl font-semibold text-black dark:text-white md:text-5xl">
-          Selected Projects
+          Featured Projects
         </h2>
 
         <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400 font-sans">
@@ -85,14 +86,14 @@ export default function Projects() {
         ))}
       </div>
       <div className="flex justify-center font-sans">
-        <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-600 px-6 py-3 text-md font-medium text-black dark:text-white transition hover:border-white">
+        <Link to="/projects" className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
           <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
             View All Projects
           </span>
           <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             View All Projects
           </span>
-        </button>
+        </Link>
       </div>
 
     </section>

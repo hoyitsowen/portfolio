@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
 import { FaBehance, FaDribbble, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { ChevronDown } from 'lucide-react';
@@ -53,7 +54,7 @@ function LabelInput({ children }) {
 }
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
@@ -66,6 +67,7 @@ export default function ContactPage() {
     if (!form.name.trim()) nextErrors.name = 'Full name is required.';
     if (!form.email.trim()) nextErrors.email = 'Email is required.';
     else if (!/^\S+@\S+\.\S+$/.test(form.email)) nextErrors.email = 'Please enter a valid email.';
+    if (!form.subject.trim()) nextErrors.subject = 'Subject is required.';
     if (!form.message.trim()) nextErrors.message = 'Message is required.';
 
     setErrors(nextErrors);
@@ -86,10 +88,24 @@ export default function ContactPage() {
 
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1100));
+      const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_k6fi1a4';
+      const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_zb7lmuv';
+      const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'bGWTBMGLD_GdQ7u6K';
+
+      const templateParams = {
+        from_name: form.name,
+        from_email: form.email,
+        subject: form.subject,
+        message: form.message,
+      };
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       setSuccess('Thanks! I will get back to you shortly.');
-      setForm({ name: '', email: '', message: '' });
+      setForm({ name: '', email: '', subject: '', message: '' });
       nameRef.current?.focus();
+    } catch (err) {
+      console.error('EmailJS send error:', err);
+      setErrors((prev) => ({ ...prev, submit: 'Something went wrong. Please try again.' }));
     } finally {
       setLoading(false);
     }
@@ -163,6 +179,24 @@ export default function ContactPage() {
 
               <motion.div custom={2} variants={fieldVariant}>
                 <LabelInput>
+                  <label htmlFor="subject" className="font-sans text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Subject
+                  </label>
+                  <input
+                    id="subject"
+                    name="subject"
+                    value={form.subject}
+                    onChange={handleChange}
+                    className="mt-2 block w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 font-sans text-sm text-gray-900 transition placeholder-gray-400 focus:border-lime-500 focus:outline-none focus:ring-1 focus:ring-lime-500 dark:border-zinc-800/80 dark:bg-[#0d0d0d] dark:text-white"
+                    placeholder="Project subject or brief title"
+                    aria-invalid={!!errors.subject}
+                  />
+                  {errors.subject && <div className="mt-1 text-xs text-red-500">{errors.subject}</div>}
+                </LabelInput>
+              </motion.div>
+
+              <motion.div custom={3} variants={fieldVariant}>
+                <LabelInput>
                   <label htmlFor="message" className="font-sans text-sm font-medium text-gray-700 dark:text-gray-300">
                     Message
                   </label>
@@ -188,7 +222,8 @@ export default function ContactPage() {
                 >
                   {loading ? 'Sending...' : 'Submit'}
                 </button>
-                {success && <div className="mt-3 text-sm text-green-600">{success}</div>}
+                  {success && <div className="mt-3 text-sm text-green-600">{success}</div>}
+                  {errors.submit && <div className="mt-2 text-xs text-red-500">{errors.submit}</div>}
               </motion.div>
             </motion.div>
           </form>
