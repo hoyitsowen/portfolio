@@ -6,12 +6,13 @@ import AboutPage from './pages/AboutPage';
 import Skills from './pages/Skills';
 import Testimonials from './pages/Testimonials';
 import Projects from './pages/Projects';
+import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import Footer from './pages/Footer';
 import ScrollToTop from './pages/ScrollToTop';
 import './App.css';
 import PillNav from './components/PillNav';
-import logo from './assets/logo.svg';
+import logo from './assets/logo.png';
 
 function App() {
   return (
@@ -55,7 +56,7 @@ function AppContent() {
           </>
         } />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<div>Services Page Coming Soon</div>} />
+        <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <ScrollToTop />
