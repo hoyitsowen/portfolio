@@ -41,16 +41,16 @@ const Footer = () => {
           <p className="text-black dark:text-gray-400">© {new Date().getFullYear()} Owen Trinidad. All rights reserved.</p>
 
           <div className="flex items-center opacity-cintainer text-text-secondary gap-6">
-            <a className="hover:text-gray-300" href="https://www.linkedin.com/in/hoyitsowen/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.linkedin.com/in/hoyitsowen/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
               <FiLinkedin className="text-xl"/>
             </a>
-            <a className="hover:text-gray-300" href="https://github.com/hoyitsowen" aria-label="GitHub">
+            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://github.com/hoyitsowen" aria-label="GitHub">
               <FiGithub className="text-xl"/>
             </a>
-            <a className="hover:text-gray-300" href="https://www.instagram.com/hoyitsowen/" aria-label="Instagram">
+            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.instagram.com/hoyitsowen/" aria-label="Instagram">
               <FiInstagram className="text-xl"/>
             </a>
-            <a className="hover:text-gray-300" href="mailto:owen.trinidad23@gmail.com" aria-label="Email">
+            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="mailto:owen.trinidad23@gmail.com" aria-label="Email">
               <FiMail className="text-xl"/>
             </a>
           </div>

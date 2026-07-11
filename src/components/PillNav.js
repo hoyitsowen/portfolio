@@ -216,21 +216,14 @@ const PillNav = ({
   const isRouterLink = href => href && !isExternalLink(href);
 
   const cssVars = {
-    ['--base']: baseColor,
-    ['--pill-bg']: pillColor,
-    ['--hover-text']: hoveredPillTextColor,
-    ['--pill-text']: resolvedPillTextColor,
-    ['--nav-h']: '42px',
-    ['--logo']: '36px',
-    ['--pill-pad-x']: '18px',
-    ['--pill-gap']: '3px'
-  };
-
-  const styleVars = {
     '--base-color': baseColor,
     '--pill-color': pillColor,
-    '--pill-text-color': pillTextColor,
-    '--pill-text-hover-color': hoveredPillTextColor
+    '--pill-text-color': resolvedPillTextColor,
+    '--pill-text-hover-color': hoveredPillTextColor,
+    '--nav-h': '42px',
+    '--logo': '36px',
+    '--pill-pad-x': '18px',
+    '--pill-gap': '3px'
   };
 
   // Theme handling
@@ -259,68 +252,68 @@ const PillNav = ({
   }, [theme]);
 
   return (
-    <div className="absolute top-4 z-[1000] left-0 right-0 flex justify-center">
+    <div className="fixed top-4 z-[1000] left-0 right-0 flex justify-center">
       <nav
-        className={`pill-nav-root w-full max-w-7xl mx-auto flex items-center justify-between box-border px-4 md:px-0 ${className}`}
+        className={`pill-nav-root w-full max-w-7xl mx-auto flex items-center justify-center box-border px-4 md:px-0 ${className}`}
         aria-label="Primary"
         style={cssVars}
       >
-        {isRouterLink(items?.[0]?.href) ? (
-          <Link
-            to={items[0].href}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            role="menuitem"
-            ref={el => {
-              logoRef.current = el;
-            }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
-            style={{
-              width: 'var(--nav-h)',
-              height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
-          </Link>
-        ) : (
-          <a
-            href={items?.[0]?.href || '#'}
-            aria-label="Home"
-            onMouseEnter={handleLogoEnter}
-            ref={el => {
-              logoRef.current = el;
-            }}
-            className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
-            style={{
-              width: 'var(--nav-h)',
-              height: 'var(--nav-h)',
-              background: 'var(--base, #000)'
-            }}
-          >
-            <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
-          </a>
-        )}
+        <div className="pill-nav-inner">
+          {isRouterLink(items?.[0]?.href) ? (
+            <Link
+              to={items[0].href}
+              aria-label="Home"
+              onMouseEnter={handleLogoEnter}
+              role="menuitem"
+              ref={el => {
+                logoRef.current = el;
+              }}
+              className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+              style={{
+                width: 'var(--nav-h)',
+                height: 'var(--nav-h)',
+                background: 'var(--base, #000)'
+              }}
+            >
+              <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            </Link>
+          ) : (
+            <a
+              href={items?.[0]?.href || '#'}
+              aria-label="Home"
+              onMouseEnter={handleLogoEnter}
+              ref={el => {
+                logoRef.current = el;
+              }}
+              className="rounded-full p-2 inline-flex items-center justify-center overflow-hidden"
+              style={{
+                width: 'var(--nav-h)',
+                height: 'var(--nav-h)',
+                background: 'var(--base, #000)'
+              }}
+            >
+              <img src={logo} alt={logoAlt} ref={logoImgRef} className="w-full h-full object-cover block" />
+            </a>
+          )}
 
-        <div
-          ref={navItemsRef}
-          className="relative items-center rounded-full hidden md:flex ml-2"
-          style={{
-            height: 'var(--nav-h)',
-            background: 'var(--base, #000)'
-          }}
-        >
-          <ul
-            role="menubar"
-            className="list-none flex items-stretch m-0 p-[3px] h-full"
-            style={{ gap: 'var(--pill-gap)' }}
+          <div
+            ref={navItemsRef}
+            className="relative items-center hidden md:flex ml-2"
+            style={{
+              height: 'var(--nav-h)'
+            }}
           >
-            {items.map((item, i) => {
+            <ul
+              role="menubar"
+              className="list-none flex items-stretch m-0 p-[3px] h-full"
+              style={{ gap: 'var(--pill-gap)' }}
+            >
+              {items.map((item, i) => {
               const isActive = activeHref === item.href;
 
               const pillStyle = {
-                background: 'var(--pill-bg, #fff)',
-                color: 'var(--pill-text, var(--base, #000))',
+                background: 'var(--pill-color, #fff)',
+                color: 'var(--pill-text-color, var(--base-color, #000))',
                 paddingLeft: 'var(--pill-pad-x)',
                 paddingRight: 'var(--pill-pad-x)'
               };
@@ -330,7 +323,7 @@ const PillNav = ({
                   <span
                     className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none"
                     style={{
-                      background: 'var(--base, #000)',
+                      background: 'var(--base-color, #000)',
                       willChange: 'transform'
                     }}
                     aria-hidden="true"
@@ -359,7 +352,7 @@ const PillNav = ({
                   {isActive && (
                     <span
                       className="absolute left-1/2 -bottom-[6px] -translate-x-1/2 w-3 h-3 rounded-full z-[4]"
-                      style={{ background: 'var(--base, #000)' }}
+                      style={{ background: 'var(--base-color, #000)' }}
                       aria-hidden="true"
                     />
                   )}
@@ -400,73 +393,75 @@ const PillNav = ({
               );
             })}
           </ul>
-        </div>
+          </div>
 
-        <button
-          ref={hamburgerRef}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
-          className="md:hidden rounded-full border-0 flex flex-col font-sans items-center justify-center gap-1 cursor-pointer p-0 relative"
-          style={{
-            width: 'var(--nav-h)',
-            height: 'var(--nav-h)',
-            background: 'var(--base, #000)'
-          }}
-        >
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
-          />
-          <span
-            className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
-            style={{ background: 'var(--pill-bg, #fff)' }}
-          />
-        </button>
-        {/* Theme toggle button (positioned via CSS to the right) */}
-        <button
-          className="theme-toggle"
-          onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
-          aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-          title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-          aria-pressed={theme === 'dark'}
-        >
-          {theme === 'light' ? (
-            // Moon icon
-            <svg className="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" focusable="false">
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-            </svg>
-          ) : (
-            // Sun icon
-            <svg className="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-            </svg>
-          )}
-        </button>
+          <button
+            className="theme-toggle ml-2"
+            onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
+            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-pressed={theme === 'dark'}
+          >
+            {theme === 'light' ? (
+              <svg className="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" focusable="false">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            ) : (
+              <svg className="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+              </svg>
+            )}
+          </button>
+
+          <button
+            ref={hamburgerRef}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            className="md:hidden rounded-full border-0 flex flex-col font-sans items-center justify-center gap-1 cursor-pointer p-0 relative ml-2"
+            style={{
+              width: 'var(--nav-h)',
+              height: 'var(--nav-h)',
+              background: 'var(--base-color, #000)'
+            }}
+          >
+            <span
+              className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+              style={{ background: 'var(--pill-bg, #fff)' }}
+            />
+            <span
+              className="hamburger-line w-4 h-0.5 rounded origin-center transition-all duration-[10ms] ease-[cubic-bezier(0.25,0.1,0.25,1)]"
+              style={{ background: 'var(--pill-bg, #fff)' }}
+            />
+          </button>
+        </div>
       </nav>
 
       <div
         ref={mobileMenuRef}
-        className="md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
+        className="pill-mobile-menu md:hidden absolute top-[3em] left-4 right-4 rounded-[27px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-[998] origin-top"
+        aria-hidden={!isMobileMenuOpen}
         style={{
           ...cssVars,
-          background: 'var(--base, #f0f0f0)'
+          background: 'var(--base-color, #f0f0f0)'
         }}
       >
         <ul className="list-none m-0 p-[3px] flex flex-col gap-[3px]">
           {items.map(item => {
             const defaultStyle = {
-              background: 'var(--pill-bg, #fff)',
-              color: 'var(--pill-text, #fff)'
+              background: 'var(--pill-color, #fff)',
+              color: 'var(--pill-text-color, #000)'
             };
+
             const hoverIn = e => {
-              e.currentTarget.style.background = 'var(--base)';
-              e.currentTarget.style.color = 'var(--hover-text, #fff)';
+              e.currentTarget.style.background = 'var(--base-color, #000)';
+              e.currentTarget.style.color = 'var(--pill-text-hover-color, #fff)';
             };
+
             const hoverOut = e => {
-              e.currentTarget.style.background = 'var(--pill-bg, #fff)';
-              e.currentTarget.style.color = 'var(--pill-text, #fff)';
+              e.currentTarget.style.background = 'var(--pill-color, #fff)';
+              e.currentTarget.style.color = 'var(--pill-text-color, #000)';
             };
 
             const linkClasses =
