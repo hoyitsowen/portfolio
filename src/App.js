@@ -27,6 +27,7 @@ function AppContent() {
 
   return (
     <>
+    <div className="selection:bg-lime-400 selection:text-black">
       <PillNav
         logo={logo}
         logoAlt="Company Logo"
@@ -60,6 +61,7 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <ScrollToTop />
+      </div>
     </>
   );
 }

@@ -78,7 +78,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-6xl md:text-8xl font-medium font-clash dark:text-white leading-[0.95] mb-8"
           >
-            Owen <br />
+            Michael Owen <br />
             <span className="text-gray-400 dark:text-gray-600">Trinidad</span>
           </motion.h1>
 

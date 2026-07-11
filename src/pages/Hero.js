@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import AboutPage from "./AboutPage";
 import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { LuArrowUpRight } from "react-icons/lu";
@@ -8,7 +9,7 @@ import '../styles/Hero.css';
 const Hero = () => {
   return (
     <section className="relative min-h-screen site-hero bg-white dark:bg-[#141414]">
-      <div className="mx-auto max-w-7xl px-6 pt-32 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 md:px-16 pt-10 lg:px-8">
 
         {/* Top intro */}
         <p className="mt-8 mb-6 flex items-center gap-2 text-base text-muted font-sans">
@@ -39,26 +40,26 @@ const Hero = () => {
 
            <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
             {/* Default text */}
+            <Link to="/about" className="text-current">
             <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-              <Link to="/about" className="text-current">
                 Know me better →
-              </Link>
             </span>
             {/* Hover text */}
             <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               About Me
             </span>
+            </Link>
           </button>
           </div>
         </div>
 
         {/* Bottom links */}
-        <div className="mt-20 relative flex gap-6 text-sm text-gray-700 font-sans">
+        <div className="mt-20 relative flex gap-6 text-sm text-gray-400 dark:text-gray-600 font-sans">
           <div className="absolute -top-4 left-0 w-1/2 border-t border-gray-700"></div>
-          <a href="https://www.linkedin.com/in/hoyitsowen/" className="hover:text-white">LINKEDIN ↗</a>
-          <a href="https://github.com/hoyitsowen" className="hover:text-white">GITHUB ↗</a>
-          <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-white">INSTAGRAM ↗</a>
-          <a href="mailto:owen.trinidad23@gmail.com" className="hover:text-white">GMAIL ↗</a>
+          <a href="https://www.linkedin.com/in/hoyitsowen/" className="hover:text-lime-600 dark:hover:text-lime-400">LINKEDIN ↗</a>
+          <a href="https://github.com/hoyitsowen" className="hover:text-lime-600 dark:hover:text-lime-400">GITHUB ↗</a>
+          <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-lime-600 dark:hover:text-lime-400">INSTAGRAM ↗</a>
+          <a href="mailto:owen.trinidad23@gmail.com" className="hover:text-lime-600 dark:hover:text-lime-400">GMAIL ↗</a>
         </div>
       </div>
       

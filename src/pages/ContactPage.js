@@ -124,9 +124,9 @@ export default function ContactPage() {
 
   return (
     <div className="bg-white text-black transition-colors duration-500 dark:bg-[#141414] dark:text-white">
-      <section className="relative min-h-screen w-full bg-white px-12 pb-16 pt-36 transition-colors duration-500 dark:bg-[#141414] sm:px-16 lg:px-24 xl:px-36">
+      <section className="relative min-h-screen w-full bg-white px-12 pb-16 pt-20 transition-colors duration-500 dark:bg-[#141414] sm:px-16 lg:px-24 xl:px-36">
         <div className="mb-16 space-y-4">
-          <div className="flex items-center gap-2 font-clash text-sm uppercase tracking-widest text-lime-400 dark:text-lime-400">
+          <div className="flex items-center gap-2 font-clash text-sm uppercase tracking-widest text-lime-600 dark:text-lime-400">
             ✦ Connect With Me
           </div>
           <h2 className="font-clash text-4xl font-semibold leading-[1.1] tracking-tight text-gray-900 dark:text-white md:text-6xl">
@@ -236,7 +236,7 @@ export default function ContactPage() {
               className="space-y-6 rounded-3xl border border-gray-100 bg-gray-50/50 p-8 dark:border-zinc-800/80 dark:bg-[#0d0d0d]"
             >
               <div className="flex">
-                <span className="inline-flex items-center gap-2 rounded-full bg-lime-500/10 px-3 py-1.5 text-xs font-medium font-sans text-lime-600 dark:text-lime-400">
+                <span className="inline-flex items-center gap-2 rounded-full bg-green-100/60 dark:bg-[#B5FF6D]/10 px-3 py-1.5 text-xs font-medium font-sans text-gray-700 dark:text-white">
                   <span className="h-2 w-2 animate-pulse rounded-full bg-lime-500" />
                   Available for work
                 </span>
@@ -271,7 +271,7 @@ export default function ContactPage() {
         <section className="mt-24 border-t border-gray-100 pt-16 pb-8 dark:border-zinc-900/80">
           <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-x-12 gap-y-12 md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr]">
             <div className="space-y-4 md:sticky md:top-12">
-              <div className="flex items-center gap-2 text-sm font-clash uppercase tracking-widest text-lime-400">
+              <div className="flex items-center gap-2 text-sm font-clash uppercase tracking-widest text-lime-600 dark:text-lime-400">
                 ✦ FAQS
               </div>
               <h2 className="font-clash text-5xl font-semibold leading-none tracking-tight text-gray-900 dark:text-white md:text-6xl">

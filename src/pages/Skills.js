@@ -1,6 +1,5 @@
 import React from 'react';
 import LogoLoop from '../components/LogoLoop';
-import Testimonials from './Testimonials';
 import {
   HiOutlineArrowRight,
   HiOutlineCodeBracket,
@@ -31,13 +30,15 @@ const skillCards = [
     icon: HiOutlineSparkles,
     title: 'Branding Design',
     description:
-      'I craft visual identities that tell meaningful stories. From logos and color systems to marketing assets, I design brands that are memorable, consistent, and aligned with their purpose.',  },
+      'I craft visual identities that tell meaningful stories. From logos and color systems to marketing assets, I design brands that are memorable, consistent, and aligned with their purpose.',
+  },
   {
     id: 'uiux',
     icon: HiOutlineSquares2X2,
     title: 'UI/UX & Tools',
     description:
-      'I transform ideas into user-centered digital experiences through research, wireframing, prototyping, and thoughtful design decisions. Every interface is created with clarity, usability, and accessibility in mind.',  },
+      'I transform ideas into user-centered digital experiences through research, wireframing, prototyping, and thoughtful design decisions. Every interface is created with clarity, usability, and accessibility in mind.',
+  },
 ];
 
 const techLogos = [
@@ -87,11 +88,11 @@ const Skills = () => {
   return (
     <section id="skills" className="relative w-full bg-white dark:bg-[#141414] px-6 py-24 md:px-16 lg:px-20 transition-colors duration-300">
       <div className="mx-auto max-w-7xl text-center">
-        <span className="inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest text-lime-400 font-clash">
+        <span className="inline-flex items-center justify-center gap-2 text-sm uppercase tracking-widest text-lime-600 dark:text-lime-400 font-clash">
           ✦ Specialty
         </span>
 
-        <h2 className="mt-6 text-5xl font-semibold tracking-tight text-slate-950 dark:text-white font-clash md:text-6xl">
+        <h2 className="mt-6 text-4xl font-semibold tracking-tight text-slate-950 dark:text-white font-clash md:text-6xl">
           Areas of Expertise
         </h2>
       </div>
@@ -133,6 +134,7 @@ const Skills = () => {
           gap={40}
           hoverSpeed={0}
           fadeOut
+          fadeOutColor="var(--logoloop-fade-color)"
           scaleOnHover
           ariaLabel="Technology partners"
           className="text-slate-950 dark:text-white"

@@ -22,6 +22,7 @@ html, body {
   --pill-color: #ffffff;
   --pill-text-color: #000000;
   --pill-text-hover-color: #000000;
+  --logoloop-fade-color: #ffffff;
   transition: background 240ms ease, color 240ms ease;
 }
 
@@ -35,6 +36,7 @@ html, body {
   --pill-color: #111827;
   --pill-text-color: #ffffff;
   --pill-text-hover-color: #ffffff;
+  --logoloop-fade-color: #141414;
 }
 
 body {

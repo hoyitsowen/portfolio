@@ -248,8 +248,12 @@ const PillNav = ({
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.style.colorScheme = 'dark';
     } else {
       document.documentElement.classList.remove('dark');
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.style.colorScheme = 'light';
     }
     localStorage.setItem('theme', theme);
   }, [theme]);
@@ -403,7 +407,7 @@ const PillNav = ({
           onClick={toggleMobileMenu}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
-          className="md:hidden rounded-full border-0 flex flex-col items-center justify-center gap-1 cursor-pointer p-0 relative"
+          className="md:hidden rounded-full border-0 flex flex-col font-sans items-center justify-center gap-1 cursor-pointer p-0 relative"
           style={{
             width: 'var(--nav-h)',
             height: 'var(--nav-h)',
