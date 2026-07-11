@@ -4,7 +4,6 @@ import {
   ExternalLink, Award, Briefcase, Cpu, GraduationCap, ChevronDown,
   Brain, PenTool, Figma, Code 
 } from 'lucide-react';
-import Lanyard from '../components/Lanyard';
 import Footer from '../pages/Footer';
 
 const AboutPage = () => {
@@ -62,53 +61,92 @@ const AboutPage = () => {
     <div className="bg-white dark:bg-[#141414] text-black dark:text-white transition-colors duration-500 font-sans selection:bg-lime-400 selection:text-black">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center px-6 md:px-16 overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:block opacity-80 pointer-events-none">
-          <Lanyard position={[0, 0, 15]} gravity={[0, -30, 0]} />
-        </div>
+      <section className="relative flex min-h-[90vh] items-center overflow-hidden px-4 py-16 sm:px-6 md:px-16 md:py-20">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <div className="relative z-10 text-center lg:text-left">
+            <motion.div {...fadeInUp} className="mb-5 flex items-center justify-center gap-2 lg:justify-start">
+              <span className="h-[1px] w-8 bg-lime-500"></span>
+              <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Work</p>
+            </motion.div>
 
-        <div className="w-full max-w-6xl mx-auto relative z-10">
-          <motion.div {...fadeInUp} className="flex items-center gap-2 mb-6">
-            <span className="w-8 h-[1px] bg-lime-500"></span>
-            <p className="text-xs font-bold uppercase tracking-widest text-lime-600 dark:text-lime-400">Available for Work</p>
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-6xl md:text-8xl font-medium font-clash dark:text-white leading-[0.95] mb-8"
-          >
-            Michael Owen <br />
-            <span className="text-gray-400 dark:text-gray-600">Trinidad</span>
-          </motion.h1>
-
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed mb-10"
-          >
-            Based in Manila, Philippines, I design and build intuitive digital 
-            experiences through a blend of UI/UX design and front-end development.
-          </motion.p>
-
-          <div className="flex gap-4">
-            <a
-              href="/Michael Owen Trinidad - Resume.pdf"
-              download="Michael Owen Trinidad - Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            <motion.h1
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="mb-6 font-clash text-5xl font-medium leading-[0.95] sm:text-6xl md:text-7xl lg:text-8xl dark:text-white"
             >
-              My Resume
-              <ExternalLink size={18} />
-            </a>
+              Owen <br />
+              <span className="text-gray-400 dark:text-gray-600">Trinidad</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-gray-600 sm:text-lg md:text-xl dark:text-gray-400 lg:mx-0"
+            >
+              Based in Manila, Philippines, I design and build intuitive digital experiences through a blend of UI/UX design and front-end development.
+            </motion.p>
+
+            <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
+              <a
+                href="/Michael Owen Trinidad - Resume.pdf"
+                download="Michael Owen Trinidad - Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full bg-black px-5 py-3 text-sm font-bold text-white transition-transform hover:scale-105 dark:bg-white dark:text-black sm:px-6 sm:text-base"
+              >
+                My Resume
+                <ExternalLink size={18} />
+              </a>
+            </div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="group relative mx-auto w-full max-w-[320px] pt-4 sm:max-w-[360px] sm:pt-6 lg:max-w-[420px] lg:pt-12 [perspective:1000px]"
+          >
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-lime-400/30 via-transparent to-slate-500/20 blur-3xl" />
+            
+            {/* 3D Flip Container */}
+            <div className="relative w-full h-[296px] sm:h-[384px] lg:h-[504px] transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+              
+              {/* Front Face (Grad Pic) */}
+              <div className="absolute inset-0 h-full w-full overflow-hidden rounded-[2rem] border border-gray-200 bg-white/80 p-2 shadow-[0_25px_90px_rgba(15,23,42,0.12)] backdrop-blur [backface-visibility:hidden] dark:border-white/10 dark:bg-[#171717]/80 sm:p-3">
+                <div className="absolute z-10 left-4 top-4 rounded-full border border-white/30 bg-white/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-700 backdrop-blur dark:border-white/10 dark:bg-black/40 dark:text-gray-200 sm:left-6 sm:top-6">
+                  Profile
+                </div>
+                <img
+                  src="/grad-pic-icon.jpg"
+                  alt="Michael Owen Trinidad"
+                  className="h-full w-full rounded-[1.4rem] object-cover object-center"
+                />
+              </div>
+
+              {/* Back Face (Avatar Logo) */}
+              <div className="absolute inset-0 h-full w-full overflow-hidden rounded-[2rem] border border-gray-200 bg-white/80 p-2 shadow-[0_25px_90px_rgba(15,23,42,0.12)] backdrop-blur [transform:rotateY(180deg)] [backface-visibility:hidden] dark:border-white/10 dark:bg-[#171717]/80 sm:p-3">
+                <div className="absolute z-10 left-4 top-4 rounded-full border border-white/30 bg-white/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-gray-700 backdrop-blur dark:border-white/10 dark:bg-black/40 dark:text-gray-200 sm:left-6 sm:top-6">
+                  Avatar
+                </div>
+                {/* Avatar Background Container */}
+                <div className="flex h-full w-full items-center justify-center rounded-[1.4rem] bg-gray-50 dark:bg-[#121212]">
+                  {/* IMPORTANT: Update the src below to match your actual avatar logo file path */}
+                  <img
+                    src="/owen-avatar-logo.png" 
+                    alt="Owen's Avatar Logo"
+                    className="h-full w-full p-4 object-contain"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 2. TECH MARQUEE */}
-      <div className="py-8 border-y border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/0 overflow-hidden">
+      <div className="overflow-hidden border-y border-gray-100 bg-gray-50/50 py-8 dark:border-white/5 dark:bg-white/0">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
@@ -124,7 +162,7 @@ const AboutPage = () => {
       </div>
 
       {/* --- CONTENT WRAPPER --- */}
-      <div className="max-w-6xl mx-auto px-6 md:px-16 py-12 space-y-32">
+      <div className="mx-auto max-w-6xl space-y-20 px-4 py-10 sm:px-6 md:px-16 md:py-12 md:space-y-28 lg:space-y-32">
 
         {/* SECTION 3: EXPERIENCE */}
         <section className="grid md:grid-cols-[1fr_1.5fr] lg:grid-cols-[1fr_2fr] gap-x-12 gap-y-8 items-start">
@@ -205,7 +243,7 @@ const AboutPage = () => {
             
             {/* Show More Trigger */}
             <div className="text-center pt-6">
-              <button className="text-xs tracking-wider text-gray-400 dark:text-gray-500 hover:text-lime-500 dark:hover:text-white transition-colors uppercase font-medium">
+              <button disabled className="text-xs tracking-wider disabled:opacity-50 disabled:cursor-not-allowed text-gray-400 dark:text-gray-500 hover:text-lime-500 dark:hover:text-white transition-colors uppercase font-medium">
                 Show More
               </button>
             </div>
