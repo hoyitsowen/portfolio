@@ -1,44 +1,7 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
-import ProjectOne from '../assets/Project1.png';
-import ProjectTwo from '../assets/Project2.png';
-import ProjectThree from '../assets/Project3.png';
-import ProjectFour from '../assets/Project4.png';
-
-const projectData = [
-  {
-    id: 1,
-    title: 'TigerRoutes',
-    category: 'Development',
-    year: '2025',
-    image: ProjectOne,
-    accent: 'bg-[#fef3c7]'
-  },
-  {
-    id: 2,
-    title: 'ParkFinder',
-    category: 'Design',
-    year: '2025',
-    image: ProjectTwo,
-    accent: 'bg-[#fbcfe8]'
-  },
-  {
-    id: 3,
-    title: "Austin's Cafe POS",
-    category: 'Development',
-    year: '2024',
-    image: ProjectThree,
-    accent: 'bg-[#e0e7ff]'
-  },
-  {
-    id: 4,
-    title: 'Roar Call',
-    category: 'Design',
-    year: '2025',
-    image: ProjectFour,
-    accent: 'bg-[#d1fae5]'
-  }
-];
+import { Link } from 'react-router-dom';
+import projectData from '../lib/projects';
 
 const ProjectsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -104,25 +67,27 @@ const ProjectsPage = () => {
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {filteredProjects.map((project) => (
-            <article key={project.id} className="group flex flex-col rounded-[2rem] border border-gray-200 bg-white p-4 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-[#151515]">
-              <div className={`${project.accent} relative mb-6 overflow-hidden rounded-[1.5rem] p-4 sm:p-6`}>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full rounded-[1.2rem] object-cover shadow-sm"
-                />
-              </div>
-
-              <div className="flex flex-1 items-end justify-between gap-4 px-1 pb-1">
-                <div>
-                  <h3 className="text-2xl font-semibold font-sans text-gray-900 dark:text-white">{project.title}</h3>
-                  <p className="mt-2 text-sm font-sans text-gray-500 dark:text-gray-400">{project.category}</p>
+            <Link key={project.id} to={`/projects/${project.id}`} className="group block no-underline">
+              <article className="flex flex-col rounded-[2rem] border border-gray-200 bg-white p-4 shadow-[0_12px_40px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-[#151515]">
+                <div className={`${project.accent} relative mb-6 overflow-hidden rounded-[1.5rem] p-4 sm:p-6`}>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full rounded-[1.2rem] object-cover shadow-sm"
+                  />
                 </div>
-                <span className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium font-sans text-gray-500 shadow-sm dark:border-white/10 dark:bg-[#111111] dark:text-gray-300">
-                  {project.year}
-                </span>
-              </div>
-            </article>
+
+                <div className="flex flex-1 items-end justify-between gap-4 px-1 pb-1">
+                  <div>
+                    <h3 className="text-2xl font-semibold font-sans text-gray-900 dark:text-white">{project.title}</h3>
+                    <p className="mt-2 text-sm font-sans text-gray-500 dark:text-gray-400">{project.category}</p>
+                  </div>
+                  <span className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium font-sans text-gray-500 shadow-sm dark:border-white/10 dark:bg-[#111111] dark:text-gray-300">
+                    {project.year}
+                  </span>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
 

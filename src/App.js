@@ -8,6 +8,7 @@ import Skills from './pages/Skills';
 import Testimonials from './pages/Testimonials';
 import Projects from './pages/Projects';
 import ProjectsPage from './pages/ProjectsPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 import ContactPage from './pages/ContactPage';
 import Footer from './pages/Footer';
 import ScrollToTop from './pages/ScrollToTop';
@@ -115,6 +116,19 @@ function AppContent() {
                 exit={{ opacity: 0, y: -8, transition: { duration: 0.35 } }}
               >
                 <ProjectsPage />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/projects/:id"
+            element={
+              <motion.div
+                className="page-motion"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.45 } }}
+                exit={{ opacity: 0, y: -8, transition: { duration: 0.35 } }}
+              >
+                <ProjectDetailPage />
               </motion.div>
             }
           />
