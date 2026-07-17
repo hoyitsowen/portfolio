@@ -79,7 +79,7 @@ const ProjectsPage = () => {
 
                 <div className="flex flex-1 items-end justify-between gap-4 px-1 pb-1">
                   <div>
-                    <h3 className="text-2xl font-semibold font-sans text-gray-900 dark:text-white">{project.title}</h3>
+                    <h3 className="text-2xl font-semibold font-clash text-gray-900 dark:text-white">{project.title}</h3>
                     <p className="mt-2 text-sm font-sans text-gray-500 dark:text-gray-400">{project.category}</p>
                   </div>
                   <span className="rounded-full border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium font-sans text-gray-500 shadow-sm dark:border-white/10 dark:bg-[#111111] dark:text-gray-300">
