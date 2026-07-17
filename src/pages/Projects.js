@@ -1,31 +1,16 @@
 import React from 'react';
 import '../styles/Projects.css';
+import ProjectOne from '../assets/Project1.png';
 import { Link } from 'react-router-dom';
 
 const projects = [
   {
+    id: 1,
     title: 'TigerRoutes',
     category: 'Development',
     year: '2025',
-    image: '../assets/Project1.png',
-    link: ''
+    image: ProjectOne,
   },
-  {
-    title: 'Pamana Restaurant',
-    category: 'Development & Design',
-    year: '2024',
-    image: '/projects/code.png',
-    link: '#'
-  },
-  {
-    title: 'Austins Cafe & Gastro Pub',
-    category: 'Development & Design',
-    year: '2024',
-    image: '/projects/austins.png',
-    link: '#'
-  },
-  {
-  }
 
 ]
 
@@ -39,7 +24,7 @@ export default function Projects() {
         </span>
 
         <h2 className="text-4xl font-semibold text-black dark:text-white md:text-5xl">
-          Featured Projects
+          Featured Project
         </h2>
 
         <p className="mt-4 text-base text-neutral-600 dark:text-neutral-400 font-sans">
@@ -48,21 +33,19 @@ export default function Projects() {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="grid grid-cols-1 gap-12">
+        {projects.map((project) => (
+          <Link
+            key={project.id}
+            to={`/projects/${project.id}`}
             className="group block"
           >
             {/* Image Card */}
-            <div className="relative overflow-hidden rounded-[28px] bg-neutral-900 p-10 transition-transform duration-500 group-hover:-translate-y-2">
+            <div className="relative overflow-hidden rounded-[21px] bg-neutral-900 p-10 transition-transform duration-500 group-hover:-translate-y-2">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full rounded-xl object-cover shadow-xl"
+                className="w-full h-80 rounded-lg object-cover shadow-xl"
               />
             </div>
 
@@ -81,8 +64,7 @@ export default function Projects() {
                 {project.year}
               </span>
             </div>
-          </a>
-          
+          </Link>
         ))}
       </div>
       <div className="flex justify-center font-sans">

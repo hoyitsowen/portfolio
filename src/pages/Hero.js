@@ -8,7 +8,7 @@ import '../styles/Hero.css';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen site-hero bg-white dark:bg-[#141414]">
+    <section className="relative site-hero bg-white dark:bg-[#141414]">
       <div className="mx-auto max-w-7xl px-6 md:px-16 pt-10 lg:px-8">
 
         {/* Top intro */}
