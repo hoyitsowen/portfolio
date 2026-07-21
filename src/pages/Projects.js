@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Projects.css';
-import ProjectOne from '../assets/Project1.png';
+import TigerRoutesPreview from '../assets/tigerroutes-header.png';
 import { Link } from 'react-router-dom';
 
 const projects = [
@@ -9,7 +9,7 @@ const projects = [
     title: 'TigerRoutes',
     category: 'Development',
     year: '2025',
-    image: ProjectOne,
+    image: TigerRoutesPreview,
   },
 
 ]
@@ -41,7 +41,7 @@ export default function Projects() {
             className="group block"
           >
             {/* Image Card */}
-            <div className="relative overflow-hidden rounded-[21px] bg-neutral-900 p-10 transition-transform duration-500 group-hover:-translate-y-2">
+            <div className="relative overflow-hidden rounded-[21px] bg-neutral-900 transition-transform duration-500 group-hover:-translate-y-2">
               <img
                 src={project.image}
                 alt={project.title}

@@ -1,7 +1,8 @@
-import ProjectOne from '../assets/Project1.png';
-import ProjectTwo from '../assets/Project2.png';
-import ProjectThree from '../assets/Project3.png';
+import ProjectOne from '../assets/tigerroutes.png';
+import ProjectTwo from '../assets/park-finder.png';
+import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/Project4.png';
+import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 
 const projectData = [
   {
@@ -9,8 +10,9 @@ const projectData = [
     title: 'TigerRoutes',
     slug: 'tiger-routes',
     category: 'Development',
-    year: '2025',
+    year: '2026',
     image: ProjectOne,
+    imageHeader: TigerRoutesHeader,
     accent: 'bg-[#fef3c7]',
     liveUrl: 'https://tigerroutes.org/',
     description:
@@ -43,10 +45,10 @@ const projectData = [
   },
   {
     id: 2,
-    title: 'ParkFinder',
+    title: 'Park Finder',
     slug: 'park-finder',
     category: 'Design',
-    year: '2025',
+    year: '2026',
     image: ProjectTwo,
     accent: 'bg-[#fbcfe8]',
     description:
@@ -61,7 +63,7 @@ const projectData = [
     title: "Austin's Cafe POS",
     slug: 'austins-cafe-pos',
     category: 'Development',
-    year: '2024',
+    year: '2025',
     image: ProjectThree,
     accent: 'bg-[#e0e7ff]',
     description:
@@ -69,7 +71,7 @@ const projectData = [
     screenshots: [ProjectThree, ProjectThree],
     tech: ['React', 'SQLite', 'Electron'],
     features: ['Order flow', 'Receipt printing', 'Inventory alerts'],
-    github: 'https://github.com'
+    github: 'https://github.com/hoyitsowen/Austin-sIMS-POS'
   },
   {
     id: 4,
@@ -77,13 +79,14 @@ const projectData = [
     slug: 'roar-call',
     category: 'Design',
     year: '2025',
-    image: ProjectFour,
+    image: '',
     accent: 'bg-[#d1fae5]',
     description:
       'A concept app for community voice messaging with playful branding and simple onboarding flows.',
     screenshots: [ProjectFour, ProjectFour],
     tech: ['Figma', 'Illustration', 'React Native'],
-    features: ['Onboarding', 'Voice messages', 'Branded UI']
+    features: ['Onboarding', 'Voice messages', 'Branded UI'],
+    github: 'https://github.com/hoyitsowen/roarcall'
   }
 ];
 

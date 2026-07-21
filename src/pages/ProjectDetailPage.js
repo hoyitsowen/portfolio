@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
-import projectData from '../lib/projects';
+import projectData from '../lib/projectData';
 import Footer from './Footer';
 
 const ProjectDetailPage = () => {
@@ -30,12 +30,11 @@ const ProjectDetailPage = () => {
         <section className="mb-8">
             <div className="relative"> 
               <img 
-                src={project.image} 
+                src={project.imageHeader} 
                 alt={project.title} 
                 className="w-full h-80 rounded-[1rem] object-cover shadow-xl" 
               />
               
-              {/* Change div to an anchor tag and add href */}
               {project.liveUrl && (
                 <a 
                   href={project.liveUrl}
