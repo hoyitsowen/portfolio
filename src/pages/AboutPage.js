@@ -7,7 +7,7 @@ import {
 import Footer from '../pages/Footer';
 
 const AboutPage = () => {
-  const skills = ["React", "TypeScript", "Next.js", "Tailwind", "Framer Motion", "Three.js", "Node", "Figma"];
+  const skills = ["React", "JavaScript", "PHP", "TailwindCSS", "Framer Motion", "Photoshop", "Premiere Pro", "Figma", "Node"];
   
   const experiences = [
     { 

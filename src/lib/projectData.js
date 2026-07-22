@@ -4,6 +4,7 @@ import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/Project4.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 import AustinsHeader from '../assets/austins-header.png'
+import ParkFinderHeader from '../assets/parkfinder-header.png';
 
 const projectData = [
   {
@@ -51,13 +52,36 @@ const projectData = [
     category: 'Design',
     year: '2026',
     image: ProjectTwo,
+    imageHeader: ParkFinderHeader,
     accent: 'bg-[#fbcfe8]',
     description:
-      'A mobile-first experience for finding nearby parks, with curated photos, accessibility info, and route previews.',
+      'ParkFinder is a mobile application that aims to offer real-time parking availability within an establishment to drivers, and provide establishments the ability to manage their parking lots in an organized and efficient manner by leveraging IoT sensor technology to monitor and display the number of occupied and vacant spaces in a parking lot.',
     screenshots: [ProjectTwo, ProjectTwo],
-    tech: ['Figma', 'React', 'Accessibility'],
-    features: ['Design system', 'High-fidelity prototypes', 'User flows', 'Accessibility considerations'],
-    github: 'https://github.com'
+    tech: ['Figma'],
+    contributions: [
+      'Designed an intuitive, mobile-first interface for drivers to instantly view real-time parking availability and navigate to open spaces with minimal friction.',
+      'Created clean, data-rich web dashboard layouts for establishment managers to easily monitor live capacity, peak-hour reports, and vehicle flow insights at a glance.',
+      'Developed detailed visual mockups and interactive prototypes to map out the complete user journey for both the driver-facing application and the facility management portal.',
+      'Established a cohesive color palette, typography system, and clear visual hierarchy focused on high readability—reducing cognitive load for drivers on the go and simplifying complex data visualization for administrators.',],
+    features: [
+      { title: 'Real-Time Availability',
+        description: 'Displays live parking availability within specific establishments.',
+      },
+      { title: 'Optimized Commutes',
+        description: 'Reduces stress, time, and fuel wasted while searching for a parking spot.',
+      },
+      { title: 'Eco-Friendly Impact',
+        description: 'Promotes greener driving by minimizing idle time and reducing traffic buildup within parking lots.',
+      },
+      { title: 'Advanced Analytics',
+        description: 'Provides detailed insights into parking trends and usage patterns.',
+      },
+      { title: 'Enhanced Customer Experience',
+        description: 'Improves overall visitor satisfaction by seamlessly streamlining parking operations.',
+      },
+      { title: 'Data-Driven Decision Making',
+        description: 'Empowers management with actionable insights for strategic planning and operational improvements.',
+      }],
   },
   {
     id: 3,
@@ -101,10 +125,25 @@ const projectData = [
     image: '',
     accent: 'bg-[#d1fae5]',
     description:
-      'A concept app for community voice messaging with playful branding and simple onboarding flows.',
+      'Led the website redesign for Roar Call, the official online advocacy campaign of the UST College of Science Student Council. The revamped platform was strategically designed to foster community discussions, enhance student collaboration, and strengthen the push for an official organization dedicated to the care of campus cats and other animals.',
     screenshots: [ProjectFour, ProjectFour],
-    tech: ['Figma', 'Illustration', 'React Native'],
+    tech: ['Figma', 'TailwindCSS', 'React Native', 'React bits'],
     features: ['Onboarding', 'Voice messages', 'Branded UI'],
+    contributions: [
+      'Transformed the existing campaign page into a visually engaging, modern website that effectively communicates the advocacy’s core mission and highlights the stories of campus animals.',
+      'Restructured the site’s navigation to seamlessly guide visitors through ongoing discussions, collaborative initiatives, and clear calls-to-action for students looking to get involved.',
+      'Established a warm, welcoming, and compassionate design system—including a cohesive color palette and typography—that resonates emotionally with the student body and animal welfare advocates.',
+      'Ensured the user interface is fully fluid and mobile-friendly, providing an accessible and smooth browsing experience for students accessing campaign updates on their phones.'],
+    features: [
+      { title: 'Donation Portal',
+        description: 'Enables users to easily contribute ROAR Call animal welfare initiatives through a secure and user-friendly donation interface.',
+      },
+      { title: 'Volunteer Sign-up Forms',
+        description: 'Allows interested students and supporters to register for upcoming activities, events, and outreach programs.',
+      },
+      { title: 'Admin Dashboard',
+        description: 'A dedicated backend interface for organizers to manage content, view submissions, track donations, and post announcements efficiently.',
+      }],
     github: 'https://github.com/hoyitsowen/roarcall'
   }
 ];

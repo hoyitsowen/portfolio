@@ -18,7 +18,7 @@ const ProjectDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-white text-black transition-colors duration-500 dark:bg-[#141414] dark:text-white">
+    <div className="min-h-screen w-full mt-6 bg-white text-black transition-colors duration-500 dark:bg-[#141414] dark:text-white">
       <main className="mx-auto max-w-6xl px-6 py-12 lg:py-20">
         <Link to="/projects" className="text-sm font-sans text-lime-600">← Back to projects</Link>
 
@@ -32,7 +32,7 @@ const ProjectDetailPage = () => {
               <img 
                 src={project.imageHeader} 
                 alt={project.title} 
-                className="w-full h-80 rounded-[1rem] object-cover shadow-xl" 
+                className="w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-[1rem] object-cover shadow-xl" 
               />
               
               {project.liveUrl && (

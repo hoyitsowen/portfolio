@@ -88,7 +88,7 @@ function AppContent() {
                 <About />
                 <Projects />
                 <Skills />
-                <Testimonials />
+               {/* <Testimonials /> */}
                 <Footer />
               </motion.div>
             }
