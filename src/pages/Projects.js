@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: 'TigerRoutes',
     category: 'Development',
-    year: '2025',
+    year: '2026',
     image: TigerRoutesPreview,
   },
 

@@ -71,7 +71,7 @@ const ProjectDetailPage = () => {
         </section>
 
         <section className="mb-8">
-          <h3 className="text-xl font-semibold dark:text-white">Tech stack</h3>
+          <h3 className="text-xl font-semibold dark:text-white">Tech Stack</h3>
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <li key={t} className="rounded-md border px-3 py-1 font-sans text-sm text-gray-700 dark:text-gray-200">{t}</li>
