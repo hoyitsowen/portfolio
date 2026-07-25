@@ -1,10 +1,11 @@
 import ProjectOne from '../assets/tigerroutes.png';
 import ProjectTwo from '../assets/park-finder.png';
 import ProjectThree from '../assets/austins-cafe-pos.png';
-import ProjectFour from '../assets/Project4.png';
+import ProjectFour from '../assets/roarcall.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 import AustinsHeader from '../assets/austins-header.png'
 import ParkFinderHeader from '../assets/parkfinder-header.png';
+import RoarCallHeader from '../assets/roarcall-header.png';
 
 const projectData = [
   {
@@ -122,7 +123,8 @@ const projectData = [
     slug: 'roar-call',
     category: 'Design',
     year: '2025',
-    image: '',
+    image: ProjectFour,
+    imageHeader: RoarCallHeader,
     accent: 'bg-[#d1fae5]',
     description:
       'Led the website redesign for Roar Call, the official online advocacy campaign of the UST College of Science Student Council. The revamped platform was strategically designed to foster community discussions, enhance student collaboration, and strengthen the push for an official organization dedicated to the care of campus cats and other animals.',
