@@ -63,28 +63,6 @@ const ProjectDetailPage = () => {
         </section>
 
         <section className="mb-8">
-          <h3 className="text-xl font-semibold dark:text-white">Preview</h3>
-          <div className="mt-4 grid grid-cols-1 gap-4">
-            {project.screenshots.map((s, i) => (
-              <img key={i} src={s} alt={`${project.title} screenshot ${i + 1}`} className="w-full rounded-md object-cover cursor-zoom-in" onClick={() => setSelectedImage(s)} />
-            ))}
-          </div>
-        </section>
-
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
-          >
-            <img 
-              src={selectedImage}
-              alt="Preview"
-              className="max-w-[90%] max-h-[90%] rounded-lg"
-            />
-          </div>
-        )}
-
-        <section className="mb-8">
           <h3 className="text-xl font-semibold dark:text-white">Tech Stack</h3>
           <ul className="mt-3 flex flex-wrap gap-2">
             {project.tech.map((t) => (
@@ -112,6 +90,28 @@ const ProjectDetailPage = () => {
             ))}
           </ul>
         </section>
+
+        <section className="mb-8">
+          <h3 className="text-xl font-semibold dark:text-white">Preview</h3>
+          <div className="mt-4 grid grid-cols-1 gap-4">
+            {project.screenshots.map((s, i) => (
+              <img key={i} src={s} alt={`${project.title} screenshot ${i + 1}`} className="w-full rounded-md object-cover cursor-zoom-in" onClick={() => setSelectedImage(s)} />
+            ))}
+          </div>
+        </section>
+
+        {selectedImage && (
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <img 
+              src={selectedImage}
+              alt="Preview"
+              className="max-w-[90%] max-h-[90%] rounded-lg"
+            />
+          </div>
+        )}
       </main>
 
       <Footer />

@@ -3,7 +3,18 @@ import ProjectTwo from '../assets/park-finder.png';
 import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/roarcall.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
+import TigerRoutesLanding from '../assets/tigerroutes-landing-page-preview.png';
+import TigerRoutesRegister from '../assets/tigerroutes-register-preview.png';
+import TigerRoutesHome from '../assets/tigerroutes-home-preview.png';
+import TigerRoutesTest from '../assets/tigerroutes-test-preview.png';
+import TigerRoutesDashboard from '../assets/tigerroutes-dashboard-preview.png';
+import TigerRoutesAnalytics from '../assets/tigerroutes-analytics-preview.png';
 import AustinsHeader from '../assets/austins-header.png'
+import AustinsMenu from '../assets/austins-menu-preview.png'
+import AustinsOrders from '../assets/austins-orders-preview.png'
+import AustinsReceipt from '../assets/austins-receipt-pos.png'
+import AustinsOrderHistory from '../assets/austins-order-history-preview.png'
+import AustinsQueue from '../assets/austins-queue-preview.png'
 import ParkFinderHeader from '../assets/parkfinder-header.png';
 import RoarCallHeader from '../assets/roarcall-header.png';
 import RoarCallPreview from '../assets/roarcall-landing-page.png';
@@ -21,7 +32,7 @@ const projectData = [
     liveUrl: 'https://tigerroutes.org/',
     description:
       'TigerRoutes is a responsive career navigation platform designed to help UST Senior High School students discover university degree programs tailored to their unique profiles. Moving beyond standard quiz-based guides, the application utilizes a custom mathematical framework that evaluates personality traits, interests, and academic backgrounds to generate highly accurate, data-driven program recommendations. Built in collaboration with a certified guidance counselor, the platform empowers students to make informed academic decisions while providing an administrative dashboard for counselors to monitor student analytics and offer personalized advising.',
-    screenshots: [ProjectOne, ProjectOne],
+    screenshots: [TigerRoutesLanding, TigerRoutesRegister, TigerRoutesHome, TigerRoutesTest, TigerRoutesDashboard, TigerRoutesAnalytics],
     tech: ['React', 'Tailwind CSS', 'Express', 'Node.js', 'MySQL', 'AWS'],
     contributions: [
       'Designed intuitive user interfaces and responsive high-fidelity mockups for both student and counselor portals',
@@ -96,7 +107,7 @@ const projectData = [
     accent: 'bg-[#e0e7ff]',
     description:
       "Designed and developed a comprehensive Point of Sale (POS) and Inventory Management System tailored for Austin's Cafe and Gastro Pub. This end-to-end solution modernized their daily operations by integrating real-time stock tracking, seamless transaction processing, and automated reporting. Ultimately, the system empowered the business to optimize inventory levels, accelerate daily sales, and leverage data for strategic decision-making.",
-    screenshots: [ProjectThree, ProjectThree],
+    screenshots: [AustinsMenu, AustinsOrders, AustinsReceipt, AustinsOrderHistory, AustinsQueue],
     tech: ['PHP', 'MySQL', 'Bootstrap', 'CSS', 'HTML5', 'JavaScript'],
     contributions: [
       'Conducted workflow analysis to design a low-friction, high-speed POS interface tailored specifically for fast-paced cafe environments.',
