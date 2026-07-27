@@ -101,11 +101,27 @@ const ProjectDetailPage = () => {
 
         <section className="mb-8">
           <h3 className="text-xl font-semibold dark:text-white">Preview</h3>
-          <div className="mt-4 grid grid-cols-1 gap-4">
-            {project.screenshots.map((s, i) => (
-              <img key={i} src={s} alt={`${project.title} screenshot ${i + 1}`} className="w-full rounded-md object-cover cursor-zoom-in" onClick={() => setSelectedImage(s)} />
-            ))}
-          </div>
+          
+          {project.screenshots && project.screenshots.length > 0 ? (
+            <div className="mt-4 grid grid-cols-1 gap-4">
+              {project.screenshots.map((s, i) => (
+                <img 
+                  key={i} 
+                  src={s} 
+                  alt={`${project.title} screenshot ${i + 1}`} 
+                  className="w-full cursor-zoom-in rounded-md object-cover" 
+                  onClick={() => setSelectedImage(s)} 
+                />
+              ))}
+            </div>
+          ) : (
+            /* Empty State Design */
+            <div className="mt-4 flex h-32 items-center justify-center rounded-md border-2 border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-black/20">
+              <p className="font-sans text-sm italic text-gray-500 dark:text-gray-400">
+                Preview screenshots are currently unavailable.
+              </p>
+            </div>
+          )}
         </section>
 
         {selectedImage && (

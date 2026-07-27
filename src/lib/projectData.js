@@ -69,7 +69,7 @@ const projectData = [
     accent: 'bg-[#fbcfe8]',
     description:
       'ParkFinder is a mobile application that aims to offer real-time parking availability within an establishment to drivers, and provide establishments the ability to manage their parking lots in an organized and efficient manner by leveraging IoT sensor technology to monitor and display the number of occupied and vacant spaces in a parking lot.',
-    screenshots: [ProjectTwo, ProjectTwo],
+    screenshots: [],
     tech: ['Figma'],
     contributions: [
       'Designed an intuitive, mobile-first interface for drivers to instantly view real-time parking availability and navigate to open spaces with minimal friction.',
