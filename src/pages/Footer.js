@@ -46,7 +46,7 @@ const Footer = () => {
             <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://github.com/hoyitsowen" aria-label="GitHub">
               <FiGithub className="text-xl"/>
             </a>
-            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.instagram.com/hoyitsowen/" aria-label="Instagram">
+            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.instagram.com/grphxbyowen" aria-label="Instagram">
               <FiInstagram className="text-xl"/>
             </a>
             <a className="hover:text-lime-600 dark:hover:text-lime-400" href="mailto:owen.trinidad23@gmail.com" aria-label="Email">

@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import projectData from '../lib/projectData';
 
 const ProjectsPage = () => {
+  useEffect(() => {
+      document.title = "Owen Trinidad | Projects";
+    }, []);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
 

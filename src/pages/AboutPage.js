@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ExternalLink, Briefcase, Cpu, GraduationCap, ChevronDown,
@@ -7,6 +7,10 @@ import {
 import Footer from '../pages/Footer';
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = "Owen Trinidad | About";
+  }, []);
+  
   const skills = ["React", "JavaScript", "PHP", "TailwindCSS", "Framer Motion", "Photoshop", "Premiere Pro", "Figma", "Node"];
   
   const experiences = [

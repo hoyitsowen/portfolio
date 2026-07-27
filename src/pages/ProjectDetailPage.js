@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import projectData from '../lib/projectData';
@@ -8,6 +8,14 @@ const ProjectDetailPage = () => {
   const { id } = useParams();
   const project = projectData.find((p) => String(p.id) === String(id));
   const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    if (project) {
+      document.title = `Owen Trinidad | ${project.title}`;
+    } else {
+      document.title = "Project Not Found | Owen Trinidad";
+    }
+  }, [project]);
 
   if (!project) {
     return (

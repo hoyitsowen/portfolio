@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
 import { ChevronDown } from 'lucide-react';
+
 
 const fieldVariant = {
   hidden: { opacity: 0, y: 12 },
@@ -41,12 +42,17 @@ function LabelInput({ children }) {
 }
 
 export default function ContactPage() {
+  useEffect(() => {
+      document.title = "Owen Trinidad | Contact";
+    }, []);
+
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState('');
   const [activeId, setActiveId] = useState(null);
   const nameRef = useRef(null);
+  
 
   const validate = () => {
     const nextErrors = {};
@@ -244,7 +250,7 @@ export default function ContactPage() {
                 <a className="transition-colors hover:text-lime-500" href="https://github.com/hoyitsowen" aria-label="GitHub">
                   <FiGithub className="text-xl" />
                 </a>
-                <a className="transition-colors hover:text-lime-500" href="https://www.instagram.com/hoyitsowen/" aria-label="Instagram">
+                <a className="transition-colors hover:text-lime-500" href="https://www.instagram.com/grphxbyowen" aria-label="Instagram">
                   <FiInstagram className="text-xl" />
                 </a>
                 <a className="transition-colors hover:text-lime-500" href="mailto:owen.trinidad23@gmail.com" aria-label="Email">
