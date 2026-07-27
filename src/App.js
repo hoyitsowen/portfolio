@@ -14,10 +14,12 @@ import ScrollToTop from './pages/ScrollToTop';
 import './App.css';
 import PillNav from './components/PillNav';
 import logo from './assets/logo.png';
+import TitleManager from './pages/TitleManager';
 
 function App() {
   return (
     <Router>
+      <TitleManager />
       <AppContent />
     </Router>
   );
@@ -27,6 +29,8 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
+    document.title = "Owen Trinidad | Frontend Developer & UI/UX Designer";
+
     if (typeof window === 'undefined') return;
 
     const observer = new IntersectionObserver(
