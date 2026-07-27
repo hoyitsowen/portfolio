@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ExternalLink, Award, Briefcase, Cpu, GraduationCap, ChevronDown,
+  ExternalLink, Briefcase, Cpu, GraduationCap, ChevronDown,
   Brain, PenTool, Figma, Code 
 } from 'lucide-react';
 import Footer from '../pages/Footer';

@@ -36,18 +36,6 @@ const faqData = [
   },
 ];
 
-function IconButton({ children, href = '#', label = '' }) {
-  return (
-    <a
-      href={href}
-      aria-label={label}
-      className="text-gray-400 transition-colors hover:text-lime-500 dark:text-zinc-500 dark:hover:text-white"
-    >
-      {children}
-    </a>
-  );
-}
-
 function LabelInput({ children }) {
   return <div className="flex flex-col">{children}</div>;
 }

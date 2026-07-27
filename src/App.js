@@ -5,7 +5,6 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import AboutPage from './pages/AboutPage';
 import Skills from './pages/Skills';
-import Testimonials from './pages/Testimonials';
 import Projects from './pages/Projects';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
