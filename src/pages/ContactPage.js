@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FiGithub, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
-import { FaBehance, FaDribbble, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { ChevronDown } from 'lucide-react';
 
 const fieldVariant = {

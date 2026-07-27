@@ -1,5 +1,5 @@
-﻿import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const testimonialData = [
   {

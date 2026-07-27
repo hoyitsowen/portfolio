@@ -1,7 +1,6 @@
 import React from 'react';
 import LogoLoop from '../components/LogoLoop';
 import {
-  HiOutlineArrowRight,
   HiOutlineCodeBracket,
   HiOutlineSparkles,
   HiOutlineSquares2X2,

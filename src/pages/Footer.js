@@ -1,6 +1,5 @@
 import React from "react";
 import { FiLinkedin, FiGithub, FiInstagram, FiMail } from "react-icons/fi";
-import { SlSocialBehance } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

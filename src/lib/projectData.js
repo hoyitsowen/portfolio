@@ -142,7 +142,6 @@ const projectData = [
       'Led the website redesign for Roar Call, the official online advocacy campaign of the UST College of Science Student Council. The revamped platform was strategically designed to foster community discussions, enhance student collaboration, and strengthen the push for an official organization dedicated to the care of campus cats and other animals.',
     screenshots: [RoarCallPreview],
     tech: ['Figma', 'TailwindCSS', 'React Native', 'React bits'],
-    features: ['Onboarding', 'Voice messages', 'Branded UI'],
     contributions: [
       'Transformed the existing campaign page into a visually engaging, modern website that effectively communicates the advocacy’s core mission and highlights the stories of campus animals.',
       'Restructured the site’s navigation to seamlessly guide visitors through ongoing discussions, collaborative initiatives, and clear calls-to-action for students looking to get involved.',

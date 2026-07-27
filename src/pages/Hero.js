@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import AboutPage from "./AboutPage";
 import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
-import { LuArrowUpRight } from "react-icons/lu";
 import '../styles/Hero.css';
 
 const Hero = () => {
