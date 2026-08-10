@@ -22,7 +22,6 @@ import RoarCallPreview from '../assets/roarcall-landing-page.png';
 import BaonHeader from '../assets/baon-header.png';
 import BaonEarlyBird from '../assets/baon-early-bird-promo.jpg';
 import BaonCast from '../assets/baon-cast-erick.jpg';
-import BaonCastLolo from '../assets/baon-cast-lolo.jpg';
 import BaonCastSched from '../assets/baon-cast-sched.jpg';
 import BaonTatlongAraw from '../assets/baon-tatlong-araw.jpg';
 import BaonBukasNa from '../assets/baon-bukas-na.jpg';
