@@ -2,6 +2,7 @@ import ProjectOne from '../assets/tigerroutes.png';
 import ProjectTwo from '../assets/park-finder.png';
 import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/roarcall.png';
+import ProjectFive from '../assets/baon.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 import TigerRoutesLanding from '../assets/tigerroutes-landing-page-preview.png';
 import TigerRoutesRegister from '../assets/tigerroutes-register-preview.png';
@@ -18,6 +19,14 @@ import AustinsQueue from '../assets/austins-queue-preview.png'
 import ParkFinderHeader from '../assets/parkfinder-header.png';
 import RoarCallHeader from '../assets/roarcall-header.png';
 import RoarCallPreview from '../assets/roarcall-landing-page.png';
+import BaonHeader from '../assets/baon-header.png';
+import BaonEarlyBird from '../assets/baon-early-bird-promo.jpg';
+import BaonCast from '../assets/baon-cast-erick.jpg';
+import BaonCastLolo from '../assets/baon-cast-lolo.jpg';
+import BaonCastSched from '../assets/baon-cast-sched.jpg';
+import BaonTatlongAraw from '../assets/baon-tatlong-araw.jpg';
+import BaonBukasNa from '../assets/baon-bukas-na.jpg';
+import BaonSalamat from '../assets/baon-salamat.jpg';
 
 const projectData = [
   {
@@ -141,6 +150,7 @@ const projectData = [
     description:
       'Led the website redesign for Roar Call, the official online advocacy campaign of the UST College of Science Student Council. The revamped platform was strategically designed to foster community discussions, enhance student collaboration, and strengthen the push for an official organization dedicated to the care of campus cats and other animals.',
     screenshots: [RoarCallPreview],
+    screenshotGridClass: 'grid-cols-1',
     tech: ['Figma', 'TailwindCSS', 'React Native', 'React bits'],
     contributions: [
       'Transformed the existing campaign page into a visually engaging, modern website that effectively communicates the advocacy’s core mission and highlights the stories of campus animals.',
@@ -158,6 +168,27 @@ const projectData = [
         description: 'A dedicated backend interface for organizers to manage content, view submissions, track donations, and post announcements efficiently.',
       }],
     github: 'https://github.com/hoyitsowen/roarcall'
+  },
+  {
+    id: 5,
+    title: 'Baon - A Musical Production',
+    slug: 'baon',
+    category: 'Design',
+    year: '2026',
+    image: ProjectFive,
+    imageHeader: BaonHeader,
+    accent: 'bg-[#d1fae5]',
+    description:
+      'BAON is an original musical production by Mediartrix-UST that explores themes of family, grief, memories, and healing. As part of the Marketing Staff, I contributed to the production\'s promotional efforts by creating publication materials, supporting marketing initiatives, and maintaining visual consistency across promotional platforms.',
+    screenshots: [BaonEarlyBird, BaonCast, BaonCastSched, BaonTatlongAraw, BaonBukasNa, BaonSalamat],
+    tech: ['Adobe Photoshop', 'Adobe Premiere Pro', 'Canva'],
+    contributions: [
+      'Designed publication materials and promotional graphics to drive audience engagement for the musical production.',
+      'Assisted in developing and executing marketing initiatives across various promotional platforms.',
+      'Maintained visual consistency and branding across digital promotional materials.',
+      'Collaborated with the marketing team to develop creative assets and support the overall promotional campaign.',
+    ],
+    features: []
   }
 ];
 

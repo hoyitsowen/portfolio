@@ -59,14 +59,20 @@ const ProjectDetailPage = () => {
           <p className="mt-6 font-sans text-gray-700 dark:text-gray-300">{project.description}</p>
           
           <div className="mt-3 flex justify-start">
-            <Link to={project.github} target="_blank" rel="noopener noreferrer" className="group relative mt-3 font-sans w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
-              <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-                Open in Github
-              </span>
-              <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                Open in Github
-              </span>
-            </Link>
+            {project.github ? (
+              <Link to={project.github} target="_blank" rel="noopener noreferrer" className="group relative mt-3 font-sans w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
+                <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
+                  Open in Github
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  Open in Github
+                </span>
+              </Link>
+            ) : (
+              <button disabled className="mt-3 font-sans w-fit rounded-full border border-gray-300 bg-gray-100 px-6 py-3 text-sm font-medium text-gray-400 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-500">
+                GitHub unavailable
+              </button>
+            )}
           </div>
         </section>
 
@@ -90,33 +96,44 @@ const ProjectDetailPage = () => {
 
         <section className="mb-12">
           <h3 className="text-xl font-semibold dark:text-white">Features</h3>
-          <ul className="mt-3 list-inside list-disc space-y-2 font-sans text-gray-700 dark:text-gray-300">
-            {project.features?.map((c, i) => (
-              <li key={i}>
-                <span className="font-bold text-black dark:text-white">{c.title}:</span> {c.description}
-              </li>
-            ))}
-          </ul>
+          {project.features && project.features.length > 0 ? (
+            <ul className="mt-3 list-inside list-disc space-y-2 font-sans text-gray-700 dark:text-gray-300">
+              {project.features.map((c, i) => (
+                <li key={i}>
+                  <span className="font-bold text-black dark:text-white">{c.title}:</span> {c.description}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="mt-4 rounded-md border border-dashed border-gray-200 bg-gray-50 p-6 text-center dark:border-gray-800 dark:bg-black/20">
+              <p className="font-sans text-sm italic text-gray-500 dark:text-gray-400">
+                Feature details are currently unavailable for this project.
+              </p>
+            </div>
+          )}
         </section>
 
         <section className="mb-8">
           <h3 className="text-xl font-semibold dark:text-white">Preview</h3>
           
           {project.screenshots && project.screenshots.length > 0 ? (
-            <div className="mt-4 grid grid-cols-1 gap-4">
-              {project.screenshots.map((s, i) => (
-                <img 
-                  key={i} 
-                  src={s} 
-                  alt={`${project.title} screenshot ${i + 1}`} 
-                  className="w-full cursor-zoom-in rounded-md object-cover" 
-                  onClick={() => setSelectedImage(s)} 
-                />
-              ))}
+            <div className={`mt-4 grid gap-4 ${project.screenshotGridClass ?? (project.category === 'Design' ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-1')}`}>
+              {project.screenshots.map((s, i) => {
+                const screenshot = typeof s === 'string' ? { src: s } : s;
+                return (
+                  <img 
+                    key={i} 
+                    src={screenshot.src} 
+                    alt={`${project.title} screenshot ${i + 1}`} 
+                    className={`w-full cursor-zoom-in rounded-md object-cover ${screenshot.gridClass ?? ''}`.trim()} 
+                    onClick={() => setSelectedImage(screenshot.src)} 
+                  />
+                );
+              })}
             </div>
           ) : (
             /* Empty State Design */
-            <div className="mt-4 flex h-32 items-center justify-center rounded-md border-2 border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-black/20">
+            <div className="mt-4 flex h-32 items-center justify-center rounded-md border border-dashed border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-black/20">
               <p className="font-sans text-sm italic text-gray-500 dark:text-gray-400">
                 Preview screenshots are currently unavailable.
               </p>
