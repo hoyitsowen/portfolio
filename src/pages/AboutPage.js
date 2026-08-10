@@ -14,8 +14,21 @@ const AboutPage = () => {
   const skills = ["React", "JavaScript", "PHP", "TailwindCSS", "Framer Motion", "Photoshop", "Premiere Pro", "Figma", "Node"];
   
   const experiences = [
+    {
+      id: 1,
+      role: "Multimedia Artist",
+      company: "Freelance",
+      year: "2021 — Present",
+      points: [
+        "Produce and edit video content, including short-form videos, and social media content, enhancing client engagement and brand storytelling.",
+        "Capture and edit photographs for personal, creative, and client projects, ensuring high-quality visual representation of products and services.",
+        "Created visually compelling graphics and multimedia content for various clients, improving brand visibility and digital presence.",
+        "Collaborated with clients to understand their requirements and deliver customized solutions, resulting in high client satisfaction and repeat business.",
+        "Managed multiple projects simultaneously, ensuring timely delivery and adherence to quality standards.",
+      ]
+    },
     { 
-      id: 1, 
+      id: 2, 
       role: "SAP BTP Integration Intern", 
       company: "Accenture", 
       year: "Jan 2026 — May 2026", 
@@ -204,7 +217,7 @@ const AboutPage = () => {
                         {exp.role}
                       </h3>
                       <p className="text-gray-400 font-medium text-sm">
-                        @{exp.company}
+                        {exp.company}
                       </p>
                     </div>
 
