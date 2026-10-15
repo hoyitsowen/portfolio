@@ -29,7 +29,7 @@ function AppContent() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "Owen Trinidad | Frontend Developer & UI/UX Designer";
+    document.title = "Owen Trinidad | Multimedia Artist & Web Developer";
 
     if (typeof window === 'undefined') return;
 
