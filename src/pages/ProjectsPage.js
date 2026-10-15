@@ -32,7 +32,7 @@ const ProjectsPage = () => {
             </h1>
           </div>
           <p className="max-w-md text-base leading-7 font-sans text-gray-600 dark:text-gray-400">
-            A curated look at the interfaces, systems, and digital journeys I’ve crafted across UI/UX design and frontend development.
+            A curated look at the interfaces, systems, and digital journeys I’ve crafted across UI/UX design and frontend development, alongside creative visuals and poster designs from my work.
           </p>
         </header>
 

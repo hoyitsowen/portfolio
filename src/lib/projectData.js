@@ -2,7 +2,7 @@ import ProjectOne from '../assets/tigerroutes.png';
 import ProjectTwo from '../assets/park-finder.png';
 import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/roarcall.png';
-import ProjectFive from '../assets/baon.png';
+import ProjectSeven from '../assets/baon.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 import TigerRoutesLanding from '../assets/tigerroutes-landing-page-preview.png';
 import TigerRoutesRegister from '../assets/tigerroutes-register-preview.png';
@@ -26,6 +26,30 @@ import BaonCastSched from '../assets/baon-cast-sched.jpg';
 import BaonTatlongAraw from '../assets/baon-tatlong-araw.jpg';
 import BaonBukasNa from '../assets/baon-bukas-na.jpg';
 import BaonSalamat from '../assets/baon-salamat.jpg';
+import PosterHeader from '../assets/poster-collection/poster-collection-header.png';
+import PosterPreview from '../assets/poster-collection/poster-collection-preview.jpg';
+import PosterOne from '../assets/poster-collection/01.jpg';
+import PosterTwo from '../assets/poster-collection/02.jpg';
+import PosterThree from '../assets/poster-collection/03.jpg';
+import PosterFour from '../assets/poster-collection/04.jpg';
+import PosterFive from '../assets/poster-collection/05.jpg';
+import PosterSix from '../assets/poster-collection/06.jpg';
+import PosterSeven from '../assets/poster-collection/07.jpg';
+import PosterEight from '../assets/poster-collection/08.jpg';
+import PosterNine from '../assets/poster-collection/09.jpg';
+import PosterTen from '../assets/poster-collection/10.jpg';
+import PosterEleven from '../assets/poster-collection/11.jpg';
+import PosterTwelve from '../assets/poster-collection/12.jpg';
+import PosterThirteen from '../assets/poster-collection/13.jpg';
+import PosterFourteen from '../assets/poster-collection/14.jpg';
+import PosterFifteen from '../assets/poster-collection/15.jpg';
+import PosterSixteen from '../assets/poster-collection/16.jpg';
+import PosterSeventeen from '../assets/poster-collection/17.jpg';
+import PosterEighteen from '../assets/poster-collection/18.jpg';
+import PosterNineteen from '../assets/poster-collection/19.jpg';
+import PosterTwenty from '../assets/poster-collection/20.jpg';
+import PosterTwentyOne from '../assets/poster-collection/21.jpg';
+import PosterTwentyTwo from '../assets/poster-collection/22.jpg';
 
 const projectData = [
   {
@@ -170,11 +194,33 @@ const projectData = [
   },
   {
     id: 5,
+    title: 'Poster Collection',
+    slug: 'poster-collection',
+    category: 'Design',
+    year: '2022',
+    image: ProjectFive,
+    imageHeader: PosterHeader,
+    accent: 'bg-[#d1fae5]',
+    description:
+      'A self-initiated creative challenge to push my boundaries as a Graphic Designer by creating weekly posters that explore new visual styles, bold typography, and experimental compositions. Each piece gives me the freedom to express ideas, challenge my creativity, and continuously refine my skills as a Multimedia Artist.',
+    screenshots: [PosterPreview, PosterOne, PosterTwo, PosterThree, PosterFour, PosterFive, PosterSix, PosterSeven, PosterEight, PosterNine, PosterTen, PosterEleven, PosterTwelve, PosterThirteen, PosterFourteen, PosterFifteen, PosterSixteen, PosterSeventeen, PosterEighteen, PosterNineteen, PosterTwenty, PosterTwentyOne, PosterTwentyTwo],
+    tech: ['Adobe Photoshop', 'Adobe Illustrator'],
+    contributions: [
+      'Explored diverse themes and creative directions to give each weekly poster a unique identity.',
+      'Created original poster layouts using thoughtful typography, color palettes, and visual composition.',
+      'Experimented with different styles, textures, and design techniques to expand my creative range.',
+      'Independently transformed ideas into engaging visuals through intentional design choices.',
+      'Strengthened my graphic design skills through consistent practice, experimentation, and continuous refinement.',
+    ],
+    features: []
+  },
+  {
+    id: 7,
     title: 'Baon - A Musical Production',
     slug: 'baon',
     category: 'Design',
     year: '2026',
-    image: ProjectFive,
+    image: ProjectSeven,
     imageHeader: BaonHeader,
     accent: 'bg-[#d1fae5]',
     description:
