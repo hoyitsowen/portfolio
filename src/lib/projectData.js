@@ -2,6 +2,7 @@ import ProjectOne from '../assets/tigerroutes.png';
 import ProjectTwo from '../assets/park-finder.png';
 import ProjectThree from '../assets/austins-cafe-pos.png';
 import ProjectFour from '../assets/roarcall.png';
+import ProjectFive from '../assets/poster-collection.jpg';
 import ProjectSeven from '../assets/baon.png';
 import TigerRoutesHeader from '../assets/tigerroutes-header.png';
 import TigerRoutesLanding from '../assets/tigerroutes-landing-page-preview.png';
@@ -27,7 +28,6 @@ import BaonTatlongAraw from '../assets/baon-tatlong-araw.jpg';
 import BaonBukasNa from '../assets/baon-bukas-na.jpg';
 import BaonSalamat from '../assets/baon-salamat.jpg';
 import PosterHeader from '../assets/poster-collection/poster-collection-header.png';
-import PosterPreview from '../assets/poster-collection/poster-collection-preview.jpg';
 import PosterOne from '../assets/poster-collection/01.jpg';
 import PosterTwo from '../assets/poster-collection/02.jpg';
 import PosterThree from '../assets/poster-collection/03.jpg';
@@ -203,7 +203,7 @@ const projectData = [
     accent: 'bg-[#d1fae5]',
     description:
       'A self-initiated creative challenge to push my boundaries as a Graphic Designer by creating weekly posters that explore new visual styles, bold typography, and experimental compositions. Each piece gives me the freedom to express ideas, challenge my creativity, and continuously refine my skills as a Multimedia Artist.',
-    screenshots: [PosterPreview, PosterOne, PosterTwo, PosterThree, PosterFour, PosterFive, PosterSix, PosterSeven, PosterEight, PosterNine, PosterTen, PosterEleven, PosterTwelve, PosterThirteen, PosterFourteen, PosterFifteen, PosterSixteen, PosterSeventeen, PosterEighteen, PosterNineteen, PosterTwenty, PosterTwentyOne, PosterTwentyTwo],
+    screenshots: [PosterOne, PosterTwo, PosterThree, PosterFour, PosterFive, PosterSix, PosterSeven, PosterEight, PosterNine, PosterTen, PosterEleven, PosterTwelve, PosterThirteen, PosterFourteen, PosterFifteen, PosterSixteen, PosterSeventeen, PosterEighteen, PosterNineteen, PosterTwenty, PosterTwentyOne, PosterTwentyTwo],
     tech: ['Adobe Photoshop', 'Adobe Illustrator'],
     contributions: [
       'Explored diverse themes and creative directions to give each weekly poster a unique identity.',
