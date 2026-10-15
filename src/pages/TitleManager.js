@@ -8,7 +8,7 @@ const TitleManager = () => {
     // Check the path and set the title accordingly
     switch (location.pathname) {
       case '/':
-        document.title = "Owen Trinidad | Frontend Developer & UI/UX Designer";
+        document.title = "Owen Trinidad | Multimedia Artist & Web Developer";
         break;
       case '/projects':
         document.title = "Owen Trinidad | Projects";
@@ -22,7 +22,7 @@ const TitleManager = () => {
       
       default:
         if (!location.pathname.startsWith('/projects/')) {
-          document.title = "Owen Trinidad | Frontend Developer & UI/UX Designer";
+          document.title = "Owen Trinidad | Multimedia Artist & Web Developer";
         }
         break;
     }
