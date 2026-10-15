@@ -44,10 +44,10 @@ const projectData = [
     tech: ['React', 'Tailwind CSS', 'Express', 'Node.js', 'MySQL', 'AWS'],
     contributions: [
       'Designed intuitive user interfaces and responsive high-fidelity mockups for both student and counselor portals',
+      'Integrated AI-assisted conversational features using an LLM-powered chatbot and Retrieval-Augmented Generation (RAG) to provide contextual responses based on project knowledge and program criteria. ',
       'Developed the interactive client-side application using React, ensuring cross-device compatibility',
       'Built the frontend architecture for the counselor analytics dashboard to visualize student assessment data',
-      'Authored use cases, testing scenarios, and documentation for User Acceptance Testing (UAT)',
-      'Implemented the UI for dynamic student profiling and the generation of exportable PDF results'],
+      'Authored use cases, testing scenarios, and documentation for User Acceptance Testing (UAT)'],
     features: [
       { title: 'Psychometric Scoring Engine',
         description: 'A rule-based system integrating RIASEC and Big Five assessments to calculate personalized program recommendations.',

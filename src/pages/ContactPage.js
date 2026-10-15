@@ -15,7 +15,7 @@ const faqData = [
     id: '01',
     question: 'What is your current role?',
     answer:
-      'I am currently working as a Frontend Developer / UI-UX Hybrid, focusing on building accessible, premium web experiences using React, Next.js, and modern animation libraries.',
+      'I work as a Frontend Developer / UI/UX Designer hybrid, focusing on building accessible, polished web experiences using React, Next.js, and modern animation libraries. I also work as a Freelance Multimedia Artist, creating engaging visual content through graphic design, photography, and video editing.',
   },
   {
     id: '02',

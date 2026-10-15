@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { FiGithub, FiInstagram, FiLinkedin, FiMail } from 'react-icons/fi';
 import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import '../styles/Hero.css';
@@ -54,10 +55,22 @@ const Hero = () => {
         {/* Bottom links */}
         <div className="mt-20 relative flex gap-6 text-sm text-gray-400 dark:text-gray-600 font-sans">
           <div className="absolute -top-4 left-0 w-1/2 border-t border-gray-700"></div>
-          <a href="https://www.linkedin.com/in/hoyitsowen/" className="hover:text-lime-600 dark:hover:text-lime-400">LINKEDIN ↗</a>
-          <a href="https://github.com/hoyitsowen" className="hover:text-lime-600 dark:hover:text-lime-400">GITHUB ↗</a>
-          <a href="https://www.instagram.com/hoyitsowen/" className="hover:text-lime-600 dark:hover:text-lime-400">INSTAGRAM ↗</a>
-          <a href="mailto:owen.trinidad23@gmail.com" className="hover:text-lime-600 dark:hover:text-lime-400">GMAIL ↗</a>
+          <a href="https://www.linkedin.com/in/hoyitsowen/" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <FiLinkedin className="text-base" />
+            <span>LINKEDIN</span>
+          </a>
+          <a href="https://github.com/hoyitsowen" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <FiGithub className="text-base" />
+            <span>GITHUB</span>
+          </a>
+          <a href="https://www.instagram.com/hoyitsowen/" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+            <FiInstagram className="text-base" />
+            <span>INSTAGRAM</span>
+          </a>
+          <a href="mailto:owen.trinidad23@gmail.com" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="Email">
+            <FiMail className="text-base" />
+            <span>GMAIL</span>
+          </a>
         </div>
       </div>
       
