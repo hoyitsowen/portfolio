@@ -2,6 +2,13 @@ import React from "react";
 import { FiLinkedin, FiGithub, FiInstagram, FiMail } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 
+const socialLinks = [
+  { href: 'https://www.linkedin.com/in/hoyitsowen/', label: 'LinkedIn', Icon: FiLinkedin },
+  { href: 'https://github.com/hoyitsowen', label: 'GitHub', Icon: FiGithub },
+  { href: 'https://www.instagram.com/hoyitsowen/', label: 'Instagram', Icon: FiInstagram },
+  { href: 'mailto:owen.trinidad23@gmail.com', label: 'Email', Icon: FiMail },
+];
+
 const Footer = () => {
   return (
     <footer className="max-screen relative w-full px-6 py-20 bg-white dark:bg-[#141414]">
@@ -39,19 +46,19 @@ const Footer = () => {
         <div className="mt-8 flex flex-col items-center justify-between gap-4 font-sans text-sm text-black dark:text-gray-400 sm:flex-row">
           <p className="text-black dark:text-gray-400">© {new Date().getFullYear()} Owen Trinidad. All rights reserved.</p>
 
-          <div className="flex items-center opacity-cintainer text-text-secondary gap-6">
-            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.linkedin.com/in/hoyitsowen/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <FiLinkedin className="text-xl"/>
-            </a>
-            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://github.com/hoyitsowen" aria-label="GitHub">
-              <FiGithub className="text-xl"/>
-            </a>
-            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="https://www.instagram.com/grphxbyowen" aria-label="Instagram">
-              <FiInstagram className="text-xl"/>
-            </a>
-            <a className="hover:text-lime-600 dark:hover:text-lime-400" href="mailto:owen.trinidad23@gmail.com" aria-label="Email">
-              <FiMail className="text-xl"/>
-            </a>
+          <div className="flex items-center gap-6 text-text-secondary opacity-container">
+            {socialLinks.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                className="hover:text-lime-600 dark:hover:text-lime-400"
+                href={href}
+                aria-label={label}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                <Icon className="text-xl" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

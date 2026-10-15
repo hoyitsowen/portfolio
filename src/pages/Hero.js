@@ -5,6 +5,13 @@ import StraightLoop from '../components/StraightLoop';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import '../styles/Hero.css';
 
+const socialLinks = [
+  { name: 'LINKEDIN', href: 'https://www.linkedin.com/in/hoyitsowen/', Icon: FiLinkedin },
+  { name: 'GITHUB', href: 'https://github.com/hoyitsowen', Icon: FiGithub },
+  { name: 'INSTAGRAM', href: 'https://www.instagram.com/hoyitsowen/', Icon: FiInstagram },
+  { name: 'GMAIL', href: 'mailto:owen.trinidad23@gmail.com', Icon: FiMail },
+];
+
 const Hero = () => {
   return (
     <section className="relative site-hero bg-white dark:bg-[#141414]">
@@ -37,40 +44,36 @@ const Hero = () => {
               for clarity, performance, and impact.
             </p>
 
-           <button className="group relative mt-6 w-fit overflow-hidden rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 text-sm font-medium text-black dark:text-white transition hover:border-black dark:hover:border-gray-400">
-            {/* Default text */}
-            <Link to="/about" className="text-current">
+          <Link
+            to="/about"
+            className="group relative mt-6 inline-flex w-fit overflow-hidden rounded-full border border-gray-300 px-6 py-3 text-sm font-medium text-black transition hover:border-black dark:border-gray-600 dark:text-white dark:hover:border-gray-400"
+          >
             <span className="block transition-all duration-300 group-hover:-translate-y-full group-hover:opacity-0">
-                Know me better →
+              Know me better →
             </span>
-            {/* Hover text */}
             <span className="absolute inset-0 flex items-center justify-center translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
               About Me
             </span>
-            </Link>
-          </button>
+          </Link>
           </div>
         </div>
 
         {/* Bottom links */}
         <div className="mt-20 relative flex gap-6 text-sm text-gray-400 dark:text-gray-600 font-sans">
           <div className="absolute -top-4 left-0 w-1/2 border-t border-gray-700"></div>
-          <a href="https://www.linkedin.com/in/hoyitsowen/" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-            <FiLinkedin className="text-base" />
-            <span>LINKEDIN</span>
-          </a>
-          <a href="https://github.com/hoyitsowen" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-            <FiGithub className="text-base" />
-            <span>GITHUB</span>
-          </a>
-          <a href="https://www.instagram.com/hoyitsowen/" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-            <FiInstagram className="text-base" />
-            <span>INSTAGRAM</span>
-          </a>
-          <a href="mailto:owen.trinidad23@gmail.com" className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400" aria-label="Email">
-            <FiMail className="text-base" />
-            <span>GMAIL</span>
-          </a>
+          {socialLinks.map(({ name, href, Icon }) => (
+            <a
+              key={name}
+              href={href}
+              className="inline-flex items-center gap-2 hover:text-lime-600 dark:hover:text-lime-400"
+              aria-label={name}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              <Icon className="text-base" />
+              <span>{name}</span>
+            </a>
+          ))}
         </div>
       </div>
       
